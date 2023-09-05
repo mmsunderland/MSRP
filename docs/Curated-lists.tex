@@ -1,0 +1,1356 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Matilda Statistics Curated lists of Resources},
+  pdfauthor={Matthew Sunderland \& Tim Slade},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Matilda Statistics Curated lists of Resources}
+\author{Matthew Sunderland \& Tim Slade}
+\date{2023-09-05}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{welcome}{%
+\chapter{Welcome}\label{welcome}}
+
+\begin{quote}
+\emph{``The list could surely go on, and there is nothing more wonderful than a list, instrument of wondrous hypotyposis.''}
+
+--- Umberto Eco
+\end{quote}
+
+This book was written to provide easy access to the series of Matilda Centre Statistic's curated lists of resources. The lists were assembled and annotated on a variety of topics tailored to the needs of researchers at the \href{https://www.sydney.edu.au/matilda-centre/}{Matilda Centre for Research in Mental Health and Substance Use}.
+
+This book is a living and evolving document with regular additions made to each chapter as well as additional chapters based on further need. We encourage you to share this document widely and feel free to provide suggestions for additional resources, new chapters, or edits by contacted either \href{matthew.sunderland@sydney.edu.au}{Matthew Sunderland} or \href{tim.slade@sydney.edu.au}{Tim Slade}.
+
+\hypertarget{usage}{%
+\section{Usage}\label{usage}}
+
+You will find each of the individual lists in the left hand column that focus on specific topics of interest. Within each list you will find several categories of resources including but not limited to textbooks, journal articles, example code, YouTube lectures and videos, and other useful website or blogs.
+
+This document was created using bookdown and the source code can be found on Github via clicking the ``View book source'' link at the bottom of the left hand column.
+
+\hypertarget{reproducible-and-replicable-data-analysis}{%
+\chapter{Reproducible and replicable data analysis}\label{reproducible-and-replicable-data-analysis}}
+
+This curated list provides resources to improve the reproducibility and replicability of your data analysis. In brief, these concepts represent the ability for anyone to take your analysis and be able to replicate and reproduce all your results. These concepts have always been important but have seen increasing attention given the replicability crisis in social psychology and science more broadly. Moreover, the open science movement and the ability to use online portals such as the OSF and GitHub have made these principles easier to implement. This list also contains useful guides on how to improve record keeping, organisation, coding, cleaning, and manipulating data while at the same time producing dynamic reports that track everything you do (and all the changes) during your data analysis. This list does rely heavily on using R software, but the same principles can be applied to other statistical software packages including Stata and SPSS. I would encourage more people to make the switch to R programming (it's not as hard as you might think). The main message is to use syntax/coding and annotate as much as possible! No more point-and-click or having to re-do tables in excel!!
+
+\hypertarget{journal-articles-and-textbooks}{%
+\section{Journal articles and textbooks}\label{journal-articles-and-textbooks}}
+
+DeBruine, L., Barr, D. (2021). Data skills for reproducible research. Self-published. \url{https://psyteachr.github.io/reprores-v2/index.html\#how-to-learn-data-skills}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{An excellent online textbook on how to improve your data skills with a focus on tidy data, reproducible workflows, dynamic reports, and some more advanced topics. I recommend going over chapter 2 and chapter 6. The great thing about this book is that it has several accompanying YouTube videos outlining the concepts!}
+\end{itemize}
+
+Epskamp, S. (2019). Reproducibility and Replicability in a fast-paced methodological world, Advances in Methods and Practices in Psychological Science, 2(2), 145-155.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Excellent overview of why we need reproducibility and replicability in data analysis. Provides hints and hips on how to improve reproducibility of results and selecting software to assist.}
+\end{itemize}
+
+Baumer, B., Centinkaya-Rundel, M, Bray, A., et al.~(2014). R Markdown: Integrating a reproducible analysis tool into introductory statistics, Technology Innovations in Statistics Education, 8(1). \url{https://escholarship.org/uc/item/90b2f5xh}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A textbook covering the basics of R markdown and how it can be applied to generate reproducible statistics.}
+\end{itemize}
+
+De Jonge, E., van der Loo, M. (2013). An introduction to data cleaning with R. Statistics Netherlands, The Hague, NL. \url{https://cran.r-project.org/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A discussion paper outlining the basics of data cleaning in R. This paper is a little old now and might not have the most up to date methods (i.e.~tidyverse).}
+\end{itemize}
+
+Buttrey, S., Whitaker, L. R. (2018). A data scientist's guide to acquiring, cleaning, and managing data in R. Wiley \& Sons: Hoboken, NJ. (See PDF for copy).
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A great textbook outlining the goals of data cleaning, reproducibility, basics in R, more advanced topics in R, and practical examples. I recommend going over Chapter 7 for clear examples.}
+\end{itemize}
+
+Collier, J. (2009). Using SPSS syntax a beginner's guide. SAGE: Los Angeles, CA. \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/1c0ug48/alma991007515259705106}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A textbook for those who want to move from point-and-click to programming using syntax in SPSS\ldots{} but really if you are going to the effort to learn syntax in SPSS then you are probably better off starting fresh in R.}
+\end{itemize}
+
+\hypertarget{websites}{%
+\section{Websites}\label{websites}}
+
+\url{https://osf.io/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{For those unfamiliar with the Open Science Framework then please check out the above website. It provides a portal for store all your code, data, reports, and preprints of your work. All completely open and accessible. Please check the ethical requirements of data sharing before you share any data.}
+\end{itemize}
+
+\url{https://docs.github.com/en} and \url{https://docs.github.com/en/get-started/quickstart/hello-world}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This is an overview of GitHub. Not many people know that the Matilda Centre has a GitHub page (\url{https://github.com/Matilda-Centre})! We encourage people to use GitHub to share and collaborate on analysis code. It is a great way to manage record keeping and stay on track with version control. If you want to join the Matilda Centre GitHub page then create your own profile and send me (Matt) an email with your username.}
+\end{itemize}
+
+\url{https://www.povertyactionlab.org/resource/data-cleaning-and-management}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Provides some useful examples and techniques for cleaning and managing data as well as ensuring proper version control and organisation.}
+\end{itemize}
+
+\url{https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{An R Markdown cheat sheet}
+\end{itemize}
+
+\url{https://finnstats.com/index.php/2021/04/02/tidyverse-in-r/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A quick guide to cleaning and manipulating using the ``tidyverse''}
+\end{itemize}
+
+\hypertarget{online-coursesworkshops}{%
+\section{Online courses/workshops}\label{online-coursesworkshops}}
+
+\url{https://reproducible-analysis-workshop.readthedocs.io/en/latest/6.RMarkdown-knitr.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{An online tutorial for using R to generate reproducible scientific analysis with a specific focus on R Markdown to generate dynamic reports.}
+\end{itemize}
+
+\url{https://bookdown.org/aschmi11/RESMHandbook/data-preparation-and-cleaning-in-r.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{An online course focusing on basics in R, with good examples of using the Tidyverse to clean and manipulate data.}
+\end{itemize}
+
+\url{https://libguides.library.kent.edu/SPSS/home}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{An online tutorial for working with data using SPSS. Focus on section 2 and section 3 for some nice examples of cleaning and manipulating data. It specifically draws links between the point-and-click methods of analysing data and the equivalent syntax to ease the transition.}
+\end{itemize}
+
+\url{https://www.youtube.com/watch?v=Cn-72tbRNFc}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Online lecture on designing a reproducible workflow with R and Github.}
+\end{itemize}
+
+\hypertarget{data-visualisation}{%
+\chapter{Data visualisation}\label{data-visualisation}}
+
+This list provide resources for those who want to produce fancy figure and tables when communicating their results. Data visualisation is an important aspect of statistics and requires careful thought about how to appropriately and effectively present your results in a visually pleasing manner.
+
+\hypertarget{journal-articles-and-textbooks-1}{%
+\section{Journal articles and textbooks}\label{journal-articles-and-textbooks-1}}
+
+Wilkinson, L. (2005). The grammar of graphics (2nd Edition). Springer.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Textbook that outlines foundation of graphing and is utilised in the R ggplot2 package. Available online: \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/12rahnq/alma991017882639705106} }
+\end{itemize}
+
+Wickham, H. (2016). Ggplot2: elegant graphics for data analysis (2nd Edition). Springer.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Guide and manual for the ggplot2 package for R. Very useful graphing package. Available online: \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/1c0ug48/alma991014142669705106}}
+\end{itemize}
+
+Winston, C. (2018). R graphics cookbook: practical recipes for visualising data (2nd Edition). O'Reilly Media.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Provide useful examples on how to visualise data and produce useful graphs. Primarily uses the ggplot2 package. Available online: \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/2rsddf/cdi_askewsholts_vlebooks_9781491978573}}
+\end{itemize}
+
+Healy, K. (2019). Data visualization: A practical introduction. Princeton University Press.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Introductory textbook on graphing and data viz.~Focuses on ggplot2 and the tidyverse.}
+\end{itemize}
+
+Healy, K., \& Moody, J. (2014). Data visualisation in sociology. Annu. Rev.~Sociol. 40: 150-128.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Article outlining data viz specific to sociology. Good place to see how to work towards a consistent standard for graphing sociological insights.}
+\end{itemize}
+
+Ola, O., \& Sedig, K. (2016). Beyond simple charts: design of visualisations for big health data. Online J Public Health Inform 8(3): e195.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Provides a framework for designing graphs associated with ``big'' data.}
+\end{itemize}
+
+Slaughter, S. J., \& Delwiche, L. D. (2010). Using PROC SGPLOT for quick high-quality graphs. SAS Global Forum.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{SUGI paper on graphing with SAS\ldots{} if that's your thing. \url{https://support.sas.com/resources/papers/proceedings10/154-2010.pdf}}
+\end{itemize}
+
+Mitchell, M. N. (2012). A visual guide to stata graphics. Stata Press.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Introductory textbook for graphing using STATA. Also has accompanying website \url{https://www.stata.com/support/faqs/graphics/gph/stata-graphs/}}
+\end{itemize}
+
+\hypertarget{websites-1}{%
+\section{Websites}\label{websites-1}}
+
+\url{https://www.jscarlton.net/post/2015-10-24visualizinglogistic/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Demonstrates one way to present odds ratios and CIs graphically.}
+\end{itemize}
+
+\url{https://www.r-graph-gallery.com/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Provides lots of inspiration and example code for graphing in R.}
+\end{itemize}
+
+\url{https://www.tableau.com/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Online platform for data graphing and visualization.}
+\end{itemize}
+
+\url{https://dreamrs.github.io/esquisse/index.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Package that allows you to interactively design graphs quickly in R.}
+\end{itemize}
+
+\url{https://www.data-to-viz.com/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Awesome webpage that provides a nice decision tree around what graph to use for the type of data you have.}
+\end{itemize}
+
+\url{https://seaborn.pydata.org/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This is a large data visualisation library for Python.}
+\end{itemize}
+
+\url{https://rstudio.github.io/leaflet/} or \url{https://leafletjs.com/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Open-source JavaScript library for interactive maps.}
+\end{itemize}
+
+\url{https://bookdown.org/ndphillips/YaRrr/pirateplot.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Example of a pirate plot that provides more usable information on a single graph than the traditional box plot.}
+\end{itemize}
+
+\url{https://stats.idre.ucla.edu/spss/seminars/spssgraphics/graphics-in-spss/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Graphing in SPSS\ldots{} if that's your thing.}
+\end{itemize}
+
+\url{https://stats.idre.ucla.edu/sas/modules/graphing-data-in-sas/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{More info on graphing in SAS.}
+\end{itemize}
+
+\url{https://stats.idre.ucla.edu/stata/modules/graph8/intro/introduction-to-graphs-in-stata/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Graphing in Stata\ldots{} if that's your thing.}
+\end{itemize}
+
+\url{https://data.library.virginia.edu/getting-started-with-shiny/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Website that provides and introduction to Shiny (a package that lets you create interactive web apps to visualise data).}
+\end{itemize}
+
+\url{https://shiny.rstudio.com/images/shiny-cheatsheet.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Shiny cheat sheet}
+\end{itemize}
+
+\url{https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Data viz cheat sheet in ggplot2}
+\end{itemize}
+
+\url{https://plotly.com/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Similar to shiny and lets you create web apps to vizualise data. Can use Python, R codes.}
+\end{itemize}
+
+\url{https://plotly.com/graphing-libraries/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Extensive graph library in Python, R, and Javascript. Provides lots of inspiration.}
+\end{itemize}
+
+\url{https://www.gapminder.org/tools/\#$chart-type=bubbles}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Fun online tool to explore how powerful data viz can be.}
+\end{itemize}
+
+\url{https://developers.google.com/chart}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Google charts. This is more for developing interactive charts for websites/mobile devices.}
+\end{itemize}
+
+\hypertarget{online-courses-and-videos}{%
+\section{Online courses and videos}\label{online-courses-and-videos}}
+
+\url{https://www.andrew.cmu.edu/user/achoulde/94842/lectures/lecture13/lecture13-94842.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Lecture material to introduce interactive graphics and shiny.}
+\end{itemize}
+
+\url{https://www.youtube.com/watch?v=49fADBfcDD4}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Live tutorial on intro to data viz with R and ggplot2}
+\end{itemize}
+
+\url{https://www.youtube.com/watch?v=h29g21z0a68}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Another lecture/workshop on ggplot2. There are two parts to this workshop.}
+\end{itemize}
+
+\url{https://www.youtube.com/watch?v=zzXCkYR84M0}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Intermediate lecture on ggplot2 offered by UQ.}
+\end{itemize}
+
+\url{https://www.youtube.com/watch?v=TPMlZxRRaBQ}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Tableau crash course.}
+\end{itemize}
+
+\url{https://www.youtube.com/watch?v=Gyrfsrd4zK0}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{How to create a web application in Shiny.}
+\end{itemize}
+
+\url{https://online-learning.harvard.edu/course/data-science-visualization?delta=2}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Online data viz course offered by Harvard via EdX.}
+\end{itemize}
+
+\hypertarget{statistical-computing}{%
+\chapter{Statistical Computing}\label{statistical-computing}}
+
+In this list we cover some of the more commonly used statistical programs. This list is to provide introductory materials when starting to use a particular software package. In terms of getting access to these programs, you should be able to download SPSS and SAS from the University of Sydney IT services. Stata requires an individual licence, or it can be used for free remotely via the Usyd Citrix Workspace App. R and Rstudio (highly recommended) can be downloaded for free along with the many R packages (\url{https://www.r-project.org/} \url{https://rstudio.com/}). Mplus requires a license and we currently have a couple of copies of Mplus installed on the Matilda Stats computers (i.e., in Matt's office and on the Statistics's laptop).
+
+\hypertarget{spss}{%
+\section{SPSS}\label{spss}}
+
+\url{https://www.spss-tutorials.com/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Website that provides online tutorials on a range of analyses in SPSS as well as the basic overview of using the program.}
+\end{itemize}
+
+\url{https://libguides.library.kent.edu/SPSS/home}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Online tutorials on SPSS offered by Kent State University. Covers getting started, working with data, exploring, and analysing data.}
+\end{itemize}
+
+\url{https://lo.unisa.edu.au/mod/book/view.php?id=646443\&chapterid=106603}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Online tutorial offered by University of SA on SPSS. Quite good for getting started with Syntax.}
+\end{itemize}
+
+\url{https://stats.idre.ucla.edu/spss/modules/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Excellent website from UCLA on the basics of SPSS, including fundamentals, reading raw data, and data management.}
+\end{itemize}
+
+\url{http://milton-the-cat.rocks/home/dsus_oditi.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{An awesome series of videos on the use of SPSS by Andy Field taken from his textbook ``Discovering Statistics Using IBM SPSS Statistics''. I also would advise getting a copy of the textbook. \url{https://www.amazon.com/Discovering-Statistics-Using-IBM-SPSS-ebook/dp/B085VRM9GS/ref=sr_1_5?dchild=1\&qid=1612743028\&refinements=p_27\%3AAndy+Field\&s=books\&sr=1-5\&text=Andy+Field}}
+\end{itemize}
+
+\url{https://cce.sydney.edu.au/course/SPSS}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Formal SPSS beginner course offered online via the Usyd Centre for Continuing education. Cost involved. }
+\end{itemize}
+
+\url{https://www.youtube.com/playlist?list=PL7Opqhbc9Wr0GG4IZeLVO8px_e1tYYP6g}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A YouTube series on SPSS hacks.}
+\end{itemize}
+
+\url{https://www.dummies.com/education/math/statistics/spss-for-dummies-cheat-sheet/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{SPSS syntax cheat sheet from the SPSS for dummies book. }
+\end{itemize}
+
+Pallant, J., (2020). SPSS survival manual: A step by step guide to data analysis using IBM SPSS (7th Edition). Routledge:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A very handy textbook if you can get a copy. Companion website here \url{https://routledgetextbooks.com/textbooks/9781760875534/}}
+\end{itemize}
+
+Levesque, R., (2005). SPSS programming and data management, 2nd Edition. SPSS Inc: Chicago, IL.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Textbook available here \url{https://spsstools.net/static/spss-programming-book/SPSS_Programming_and_Data_Management_2nd_edition.pdf}. Offers a large amount of detail in using SPSS from basics to advanced programming and macros. It is also quite helpful if you want to migrate to SAS from SPSS\ldots{} but can be a little dry.}
+\end{itemize}
+
+\hypertarget{stata}{%
+\section{Stata}\label{stata}}
+
+\url{https://www.stata.com/bookstore/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This link allows you to browse all the available textbooks on Stata offered via the official website.}
+\end{itemize}
+
+\url{https://www.stata.com/bookstore/stata-journal/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Link to the official Stata Journal that provides papers on a range of statistical topics using Stata.}
+\end{itemize}
+
+\url{https://stats.idre.ucla.edu/stata/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{UCLA website on the use of Stata some excellent resources including data examples, annotated output, textbook examples, and learning modules.}
+\end{itemize}
+
+\url{https://data.princeton.edu/stata/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Stata tutorial available from Princeton University. Includes an introduction to Stata, data management, graphics, and programming.}
+\end{itemize}
+
+\url{https://www.stata.com/support/faqs/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Quite a useful FAQ website offered by Stata that provides answers to questions on statistical analysis, programming, graphics, data management, etc.}
+\end{itemize}
+
+\url{http://www.stat.columbia.edu/~tzheng/teaching/w1111/startingstata.htm}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Very brief overview on getting started with Stata offered by Columbia University.}
+\end{itemize}
+
+\url{https://www.stata.com/bookstore/handbook-statistical-analyses-stata/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This book is a little old but it provides some good examples of how to carry out different data analysis procedures (e.g.~logistic regression, survival analysis, GEE) in Stata.}
+\end{itemize}
+
+\hypertarget{sas}{%
+\section{SAS}\label{sas}}
+
+\url{https://online.stat.psu.edu/stat480/lesson/1}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Penn State University online lesion on Getting started in SAS.}
+\end{itemize}
+
+\url{https://www.youtube.com/channel/UCWOfmTlbeesYiDJNflqsWQA}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This is the SAS Users YouTube website. Official SAS trainers provide a range of video tutorials on the basics of programming and analysis using SAS. Also covers additional topics like SAS Enterprise Guide and other add-ins.}
+\end{itemize}
+
+\url{https://stats.idre.ucla.edu/sas/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Again, excellent website from UCLA on basics of using SAS as well as an extensive list of data analysis examples, annotated outcome, textbook examples, and other useful resources. I would recommend look at the SAS Library link \url{https://stats.idre.ucla.edu/sas/library/} as this provides an extensive range of resources.}
+\end{itemize}
+
+\url{https://www.sas.com/store/books/categories/getting-started/cBooks-cbooks_categories-cbooks_categories_3-p1.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Official list of beginner textbooks from SAS. I would recommend ``Fundamentals of Programming in SAS'' and ``The Little SAS Book''. You should be able to find these textbooks in the Usyd library if you search.}
+\end{itemize}
+
+\url{https://www.sas.com/store/books/categories/analytics-statistics/cBooks-cbooks_categories-cbooks_categories_18-p1.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{More textbooks officially endorsed by SAS but this time focused on analysis and various types of statistical procedures.}
+\end{itemize}
+
+\url{https://www.lexjansen.com/cgi-bin/xsl_transform.php?x=sbt\&c=sugi}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This website provides Beginning tutorials from the SAS Global Forum (previously called SUGI). Attendees of the forum must provide papers if they are presenting and many papers demonstrate how to conduct specific analyses or tips on how to improve your SAS skills.}
+\end{itemize}
+
+\url{https://www.lesahoffman.com/PSYC930SAS/index.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Some lecture materials on ``Making friends with SAS'' offered by Lesa Hoffman.}
+\end{itemize}
+
+\url{https://support.sas.com/edu/courses.html?ctry=AU}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This is a link to all courses offered by SAS, some of free but the vast majority require payment and can be quite expensive but very good if you can a chance to attend one.}
+\end{itemize}
+
+DiMaggio, C., (2013). SAS for Epidemiologists: Applications and Methods. New York, NY: Springer.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A comprehensive textbook mostly designed for students studying public health and epidemiology. Covers topics such as data cleaning, programming, categorical data analysis, ANOVA, linear regression. The textbook is available online via Usyd library \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/1c0ug48/alma991019154709705106}}
+\end{itemize}
+
+\hypertarget{r}{%
+\section{R}\label{r}}
+
+\textbf{Important note: R is a large and flexible program with a tonne of free resources available. This is just the tip of the iceberg and if you are wanting to use R then Google becomes your best friend. It is easy to get overwhelmed, so I suggest you start working on smaller projects and tackle tasks and topics that are suitable for that project one at a time. }
+
+\url{https://www.r-bloggers.com/2017/03/the-5-most-effective-ways-to-learn-r/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A blog post on the most effective ways to learn R}
+\end{itemize}
+
+\url{https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf}
+
+-\emph{An introductory manual for R offered by the R core team.}
+
+\url{http://www.r-tutor.com/r-introduction}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Website that provides a series of introductory tutorials on R including basic data types, vectors, matrices, lists, data frames, and some beginning statistics.}
+\end{itemize}
+
+\url{https://rstudio.com/resources/webinars/a-gentle-introduction-to-tidy-statistics-in-r/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A gentle introduction to Tidy Statistics.}
+\end{itemize}
+
+\url{https://rstudio.com/collections/rstudio-essentials/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This provides several webinars on the use of RStudio. It is highly recommended that you use R via the Rstudio software. This is a more useable interface than the base R software.}
+\end{itemize}
+
+\url{https://rstudio.com/resources/webinars/getting-started-with-r-markdown/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This video looks at getting started with RMarkdown. This allows you to generate reproducible reports using R code.}
+\end{itemize}
+
+\url{https://education.rstudio.com/learn/beginner/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Beginner resources that are offered by RStudio and include getting started guides, cheat sheets, textbooks, tutorials, etc. Some recommended textbooks include: R for Data science, R Cookbook, and the R Graphics Cookbook. I also highly recommend looking through the cheat sheets and picking out ones that you will most likely refer to often.}
+\end{itemize}
+
+\url{https://www.statmethods.net/index.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{In depth website that provides tutorials for beginners in using R, including statistics, advanced statistics, graphs, and advanced graphs. }
+\end{itemize}
+
+\url{https://www.youtube.com/user/marinstatlectures}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A very informative YouTube channel dedicated to statistics predominately in R }
+\end{itemize}
+
+\url{https://www.r-graph-gallery.com/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A useful website dedicated to graphing in R. It provides lots of examples for many different chart types, including graphing distributions, correlation, ranking, evolution, mapping, flow, and animated graphs.}
+\end{itemize}
+
+\url{https://www.r-bloggers.com/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A link to many different blogs on R including new books, how to perform various statistical procedures in R, and how to improve your programming.}
+\end{itemize}
+
+\url{https://journal.r-project.org/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Link to the R journal that includes papers in various R packages.}
+\end{itemize}
+
+\url{https://intersect.org.au/training/courses/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Online Zoom lessons in R, Python and other software offered free to USyd staff. Ranges from novice to advanced topics like machine learning. I have done a course here and found it really helpful. It is great to be able to ask little questions that arise in real-time.}
+\end{itemize}
+
+\url{https://www.sydney.edu.au/research/facilities/sydney-informatics-hub/workshops-and-training/training-calendar.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This is a calendar for the Sydney informatics hub workshops. Most are free, but some have a fee (\textasciitilde\$500) Note some of these link to courses run by intersect.}
+\end{itemize}
+
+\url{https://r-graphics.org/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A link to the online version of the book ``R Graphics Cookbook'' which provides practical ``recipes'' for visualising data}
+\end{itemize}
+
+\hypertarget{mplus}{%
+\section{Mplus}\label{mplus}}
+
+\url{https://stats.idre.ucla.edu/mplus/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Once more, the UCLA website this time focusing on Mplus. Provides seminars, common questions, analysis examples, textbook examples, annotated outcome.}
+\end{itemize}
+
+\url{http://www.statmodel.com/ugexcerpts.shtml}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Link to the official Mplus user's guide and language addendums. This site also contains all the example input programs for the examples offered in each chapter of the user's guide.}
+\end{itemize}
+
+\url{http://www.statmodel.com/cgi-bin/discus/discus.cgi}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Official Mplus discussion forum that can sometimes be useful if you want to look for something specific. You can only post of the forum if you have an active Mplus license.}
+\end{itemize}
+
+\url{https://www.youtube.com/c/MplusVideos}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{The official Mplus YouTube website that contains all the lectures and short courses on using Mplus for various statistical procedures.}
+\end{itemize}
+
+\url{https://www.youtube.com/playlist?list=PL8aoPJZQes3qZbWeho7WFNjgpRtLU3KHs}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{YouTube playlist of Michael Zyphur's Mplus workshop conducted over 5 days at the University of Melbourne. Covers a range of different topics\ldots{} mostly more advanced.}
+\end{itemize}
+
+\url{https://www.youtube.com/user/ltolandky/videos}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{YouTube channel by Michael Toland. Provides several videos on introduction to Mplus, as well as specific topics on path analysis, confirmatory factor analysis, bifactor analysis, etc.}
+\end{itemize}
+
+\url{https://global.oup.com/us/companion.websites/9780195367621/pdf/MplusQuickGuide2015.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Introductory guide in using Mplus. Provides an overview of the program, the language, some various models, and using the Mplus language generator.}
+\end{itemize}
+
+\url{https://cran.r-project.org/web/packages/MplusAutomation/vignettes/Vignette.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Highlights a very useful package in R that works with Mplus called MplusAutomation. This PDF provides some basic examples on how to start using Mplus with R. It takes advantage of the data manipulation and graphing power of R but the statistical power of the Mplus engine.}
+\end{itemize}
+
+\hypertarget{comparing-programs}{%
+\section{Comparing programs}\label{comparing-programs}}
+
+\textbf{Important note: there is no right or wrong package to use if it can do the task that you require. Our advice would be to learn something that you feel most comfortable with using. Many people already have experience with SPSS and you can continue to use it, other people want to start fresh and might begin learning R or Mplus. The following links might help guide you in terms of which software package to start using. }
+
+\url{https://guides.nyu.edu/quant/statsoft}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{NYU comparing of different programs providing basic pros and cons of each. Covers SPSS, Stata, SAS, R and a couple of additional programs not mentioned here.}
+\end{itemize}
+
+\url{https://www.r-bloggers.com/2019/07/whats-the-best-statistical-software-a-comparison-of-r-python-sas-spss-and-stata/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Another blog post on the different merits of each statistical program. Compares R, python, SAS, SPSS, and Stata}
+\end{itemize}
+
+\url{https://lo.unisa.edu.au/mod/book/view.php?id=631718}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Comparison of programs by University of SA.}
+\end{itemize}
+
+\hypertarget{mlm-and-latent-growth-models}{%
+\chapter{MLM and Latent growth models}\label{mlm-and-latent-growth-models}}
+
+This list provides resources on multilevel models (MLM) and latent growth models for the analysis of longitudinal data. Both MLM and latent growth models are similar but different frameworks to analyse change over time. Both have strengths and weaknesses and both frameworks might be more or less suitable depending on the specific research question and the type of data that you want to analyse. Whilst MLM can be used for other types of clustered or multi-level structured data, we focus here on the use of MLM for repeated measures or longitudinal analysis.
+
+\hypertarget{journal-articles-and-textbooks-2}{%
+\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-2}}
+
+Hoffman, L. (2015). Longitudinal analysis: modelling within-person fluctuation and change. Routledge.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{An excellent textbook that provides easy to understand text and examples on the analysis of longitudinal data. Written primarily for non-mathematical readers. It focuses on multilevel models for longitudinal data, looking at unconditional and conditional models, time-invariant and time-varying predictors, and more advanced applications. I have got a copy of the book if anyone wants to borrow it or it can be found online via the Usyd library website. \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/2rsddf/cdi_askewsholts_vlebooks_9781317591092} }
+\end{itemize}
+
+Duncan, T. E., Duncan, S.C., and Strycker, L. A. (2006) An introduction to latent variable growth curve modelling: concepts, issues, and application (2nd ed.) Routledge.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Another great textbook but focused more on using latent growth models for longitudinal data (also sometimes referred to as a structural equation modelling or multivariate approach to longitudinal data). Contains a range of topics including growth models for non-continuous data, growth mixture models, piecewise models, how to handle missing data, etc. This book is also available online via Usyd website. \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/2rsddf/cdi_askewsholts_vlebooks_9780203879962} }
+\end{itemize}
+
+Twisk, J. W. R. (2013). Applied longitudinal data analysis for epidemiology (a practical guide) (2nd ed.) Cambridge University Press.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A very useful textbook that provides a general overview of some of the most important techniques for longitudinal data analysis, particularly from an epidemiological data perspective. It covers multiple types of data (continuous, binary, ordinal, count), the analysis of experimental studies, and how to handle missing data. The book is available online via Usyd website. \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/2rsddf/cdi_askewsholts_vlebooks_9781107065352} }
+\end{itemize}
+
+Twisk, J. W. R. (2021) Analysis of data from randomised controlled trials: A practical guide. Springer.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Another useful textbook by Twisk that provides a general overview of analysis of RCTs. There are chapters that focus on using multilevel models for the analysis of RCTs with more than one follow-up measurement. The book also provides and overview of cluster RCTs and dichotomous outcomes that are commonly used in RCTs at Matilda. \url{https://link.springer.com/book/10.1007/978-3-030-81865-4} }
+\end{itemize}
+
+Singer, J. D., \& Willett, J. B. (2003) Applied longitudinal data analysis: modelling change and event occurrence. Oxford University Press.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Another textbook focusing on longitudinal data analysis. This book contains material on multilevel models but also on survival models. Lots of examples are provided. The book is available online via the Usyd library website. \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/2rsddf/cdi_proquest_ebookcentral_EBC3054153}}
+\end{itemize}
+
+Grimm, K. J., Ram, N., \& Estabrook, R. (2016). Growth modelling: structural equation and multilevel modelling approaches. Guilford Press.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Just in case you needed another textbook on growth models. This provides many real-world examples using longitudinal data. Also available online via Usyd library website \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/1c0ug48/alma991013485709705106}}
+\end{itemize}
+
+Chih‐Ping Chou, Peter M. Bentler \& Mary Ann Pentz (1998) Comparisons of two statistical approaches to study growth curves: The multilevel model and the latent curve analysis, Structural Equation Modeling: A Multidisciplinary Journal, 5:3, 247-266, DOI: \url{https://10.1080/10705519809540104}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A useful paper that describes differences between multilevel modelling framework and the latent growth curve framework (sometimes called structural equation modelling or multivariate approach). Highlights the pros and cons of both frameworks depending on the needs of the analysis and the data you have. }
+\end{itemize}
+
+Curran, P. J., Obeidat, K., \& Losardo, D. (2010). Twelve Frequently Asked Questions About Growth Curve Modeling. Journal of cognition and development : official journal of the Cognitive Development Society, 11(2), 121--136. \url{https://doi.org/10.1080/15248371003699969}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Nice overview article of latent growth curve models. Provides an introduction, definitions, data requirements, missing data, different growth shapes, model fit, etc. }
+\end{itemize}
+
+Hesser, H. (2015). Modeling individual differences in randomized experiments using growth models: Recommendations for design, statistical analysis and reporting of results of internet interventions. Internet Interventions, 2(2), 110--120. \url{https://doi.org/10.1016/J.INVENT.2015.02.003}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Another introduction but specifically focused on RCTs and internet interventions. Particularly relevant to the work done at Matilda.}
+\end{itemize}
+
+Peugh, J. L. (2010). A practical guide to multilevel modeling. Journal of School Psychology, 48(1), 85--112. \url{https://doi.org/10.1016/j.jsp.2009.09.002}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A paper is that more generally focused on multilevel model framework. Can be applied to nested cross-sectional data or longitudinal data. Provides examples of both. }
+\end{itemize}
+
+Feingold, A. (2013). A regression framework for effect size assessments in longitudinal modelling of group differences. Review of General Psychology, 17(1), 111-121. DOI: \url{https://doi.org/10.1037/a0030048}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A paper focused on the use of estimating effect sizes associated with longitudinal growth models. Particularly relevant for identifying the magnitude of group differences (e.g., intervention data).}
+\end{itemize}
+
+Ram, N. \& Grimm, K. (2007). Using simple and complex growth models to articulate developmental change: matching theory to method. International Journal of Behavioural Development, 31(4), 303-316. \url{https://doi.org/10.1177/0165025407077751}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Another more focused paper, this time looking at non-linear models of change, e.g.~quadratic, latent bias, exponential, multiphasic. }
+\end{itemize}
+
+McNeish, D., Matta, T. (2018). Differentiating between mixed-effects and latent-curve approaches to growth modeling. Behav Res 50, 1398--1414. \url{https://doi.org/10.3758/s13428-017-0976-5}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{An excellent article outlining the similarities and differences between MLM and latent growth models as well as discussion of the strengths and weaknesses and how to select the best framework for you research question/data. }
+\end{itemize}
+
+\hypertarget{websites-2}{%
+\section{Websites}\label{websites-2}}
+
+\url{https://www.pilesofvariance.com/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This website accompanies the Hoffman textbook. It provides several examples in different statistical programs (SAS, SPSS, Stata, MPlus) linked to examples provided in the textbook. }
+\end{itemize}
+
+\url{https://hedeker.people.uic.edu/ml.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Don Hedeker's website that provides a range of examples in SPSS and SAS as well as different types of data (continuous, dichotomous, ordinal, nominal). They also provide a guide for estimating sample sizes for longitudinal designs. }
+\end{itemize}
+
+\url{https://sites.google.com/site/longitudinalmethods/home?authuser=0}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Kevin Grimm's lab website. Contains a list of publications and downloads for example syntax and scripts. }
+\end{itemize}
+
+\url{http://www.bristol.ac.uk/cmm/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{The centre for multilevel modelling at the University of Bristol provides a range of resources on multilevel modelling in general (not just applied to longitudinal data). }
+\end{itemize}
+
+\hypertarget{online-courses-and-videos-1}{%
+\section{Online courses and videos}\label{online-courses-and-videos-1}}
+
+\url{https://youtube.com/playlist?list=PLQGe6zcSJT0VxMZUN6DBuhIoCRZNoA2Vz}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A nine-part YouTube tutorial on growth curve modelling by Curran-Bauer Analytics. Covers the basics and the differences between longitudinal analysis using multilevel modelling vs structural equation modelling.}
+\end{itemize}
+
+\url{https://www.lesahoffman.com/PSQF7375_Longitudinal_Spring2019/index.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Video lecture series conducted by Lesa Hoffman as part of her course at University of Iowa. }
+\end{itemize}
+
+\url{https://youtu.be/2iQJCLiiyl8}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Introductory and intermediate growth models using Mplus. This lecture is part of the Mplus short course conducted at Johns Hopkins University. Lecture notes available here \url{http://www.statmodel.com/download/Topic\%203.pdf} }
+\end{itemize}
+
+\url{https://youtu.be/cr9RpSgRYVw}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{A three-part series explaining how to analyse longitudinal data via multilevel models in R and RStudio.}
+\end{itemize}
+
+\url{https://stats.idre.ucla.edu/other/mult-pkg/seminars/mlm-longitudinal/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Online notes for a seminar based on Singer and Willett textbook. Focuses on comparing different analytic strategies, multilevel level models, and treatment effects over time. }
+\end{itemize}
+
+\hypertarget{example-syntax}{%
+\section{Example syntax}\label{example-syntax}}
+
+\url{https://stats.idre.ucla.edu/mplus/output/lgcm_mlm/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Annotated Mplus programs on latent growth and multilevel models. Provides four examples: two growth and two multilevel models. It also draws comparisons to other programs like HLM and Stata. }
+\end{itemize}
+
+\url{https://hedeker.people.uic.edu/ml.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Contains multiple example syntax and programs for SAS and SPSS.}
+\end{itemize}
+
+\url{https://stats.idre.ucla.edu/other/examples/alda/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Example syntax from Singer and Willett textbook. Sample data is available to download along with programs in Mplus, SAS, Stata, R, and SPSS. }
+\end{itemize}
+
+\url{https://sites.google.com/site/longitudinalmethods/downloads?authuser=0}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Contains many example files and scripts from Mplus, SAS, OpenMX, etc. The examples come from papers published by Kevin Grimm.}
+\end{itemize}
+
+\hypertarget{causal-mediation-analysis}{%
+\chapter{Causal Mediation Analysis}\label{causal-mediation-analysis}}
+
+This list provides resources that outline causal mediation analysis and the potential outcomes framework. Specifically you will find resources defining and describing causal mediation analysis, how it differs from traditional mediation approach, and practical guidelines for conducting an analysis and how best to interpret the results.
+
+\hypertarget{journal-articles-and-textbooks-3}{%
+\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-3}}
+
+VanderWeele, T. (2015). Explanation in causal inference: methods for mediation and interaction. Oxford University Press.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Pretty much ``the textbook'' on causal mediation analysis written by one of the leading experts in the field. Covers many topics including sensitivity analysis, multiple mediators, time varying exposures, etc. The book is available to view online via the Usyd library. }
+\end{itemize}
+
+Muthén, B. O., Muthén, L. K., \& Asparouhov, T. (2017). Regression and mediation analysis using Mplus. Los Angeles, CA: Muthén \& Muthén.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{An excellent textbook providing an introduction and overview of causal mediation analysis and real-data examples using Mplus software. See Chapter 4 for introduction to causal mediation analysis and Chapter 8 for causal mediation specifically for binary outcomes and continuous mediators (what we often are faced with in terms of data at Matilda). I have a copy of the book if anyone wants to borrow it.}
+\end{itemize}
+
+Muthén, B. \& Asparouhov T. (2015). Causal effects in mediation modeling: An introduction with applications to latent variables. Structural Equation Modeling: A Multidisciplinary Journal, 22(1), 12-23. \url{DOI:10.1080/10705511.2014.935843}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Introduces causal effect models and then offers applications with latent variables as the mediators or outcomes. Provides example Mplus scripts for mediated moderation analysis and binary outcomes. Alternative paper on similar topic but more detail found here \url{http://www.statmodel.com/download/causalmediation.pdf}}
+\end{itemize}
+
+Imai, K., Keele, L., \& Tingley, D. (2010). A general approach to causal mediation analysis. Psychological methods, 15(4), 309.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Article that provides and overview of causal mediation analysis and a general framework for analysis rather than use of linear structural equation models. The article is a little dense but provides some useful examples and software options. }
+\end{itemize}
+
+Rijnhart, J. M., Valente, M. J., MacKinnon, D. P., Twisk, J. W R., Heymans, M. W. (2020). The use of traditional and causal estimators for mediation models with a binary outcome and exposure-mediator interaction. Structural Equation Modeling, DOI: 10.1080/10705511.2020.1811709
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Article that provides and overview of the distinction people traditional mediation and causal mediation and provides real-data examples, analytic comparisons, and simulation study to demonstrate differences and similarities between the two approaches. Concludes that causal mediation is the preferred method. Includes example codes for Stata. }
+\end{itemize}
+
+Feingold A, MacKinnon DP, Capaldi DM. Mediation analysis with binary outcomes: Direct and indirect effects of pro-alcohol influences on alcohol use disorders. Addictive Behaviors. 2019 Jul;94:26-35. DOI: 10.1016/j.addbeh.2018.12.018.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Articles that provides and overview of causal mediation specifically for binary outcomes and provides useful templates for presentation of results and interpretation of odds ratios.}
+\end{itemize}
+
+Valente, M. J., Rijnhart, J. J., Smyth, H. L., Muniz, F. B., \& MacKinnon, D. P. (2020). Causal Mediation Programs in R, M plus, SAS, SPSS, and Stata. Structural Equation Modeling. DOI: 10.1080/10705511.2020.1777133
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Article provides an overview of the various computer programs to conduct causal mediation analysis. The article draws comparisons between the programs and highlights strengths and weaknesses of each. Finds that many software packages are the same but Mplus and R are better when handling missing data. Mplus is preferred when any of the variables represent latent variables.}
+\end{itemize}
+
+Tingley, D., Yamamoto, T., Hirose, K., Keele, L., Imai, K. (2014). Mediation: R package for causal mediation analysis. Journal of Statistical Software, 59(5).
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Provides and overview and description of an R package to conduct causal mediation analysis using model-based and design-based approaches as described by Imai.}
+\end{itemize}
+
+\hypertarget{websites-3}{%
+\section{Websites}\label{websites-3}}
+
+\url{https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Website from Columbia University Mailman School of Public health. Provides a brief overview and a list of additional readings and potential courses.}
+\end{itemize}
+
+\url{https://www.hsph.harvard.edu/tyler-vanderweele/tools-and-tutorials/}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Tyler VanderWeele website that provides additional tools and tutorials for conducting sensitivity analysis for unmeasured confounding (e-values), tools for power analysis, and links to online courses}.
+\end{itemize}
+
+\url{https://imai.fas.harvard.edu/projects/mechanisms.html}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Kosuke Imai's website providing list of publications and links to presentations and statistical software to conduct mediation analysis using Imai's approach in R.}
+\end{itemize}
+
+\hypertarget{online-courses-and-videos-2}{%
+\section{Online courses and videos}\label{online-courses-and-videos-2}}
+
+\url{https://www.youtube.com/watch?v=EI5y6pV87-Q}
+\url{https://www.youtube.com/watch?v=WyqdGxsnR5w}
+\url{https://www.youtube.com/watch?v=CNdan-6gNlY}
+\url{https://www.youtube.com/watch?v=WFMN1828648}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Parts 1-4 of an online lecture series presented by Tyler VanderWeele on causal mediation analysis. Provides an overview and covers topics such as binary outcomes, sensitivity analysis, and causal mediation in survival data.}
+\end{itemize}
+
+\url{https://www.youtube.com/watch?v=1EQa4z-509Y}
+
+\begin{itemize}
+\item
+  \emph{Lecture conducted by Bengt Muthen from Mplus on causal mediation analysis. Provides a very accessible overview of the method.}
+  \url{https://www.youtube.com/playlist?list=PLasC_CrKi-FVLmDDnVk0FMgl1f04J73ck}
+\item
+  \emph{Full playlist from the Mplus short course on regression and mediation where the above lecture was taken from. Covers more topics such as linear regression, count variable modelling, traditional mediation analysis, sensitivity analysis, Bayesian analysis, and missing data analysis.}
+\end{itemize}
+
+\url{https://www.youtube.com/watch?v=9j_HWkrSxzI}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Brief overview and introduction on the potential outcomes framework and counterfactuals.}
+\end{itemize}
+
+\url{https://statisticalhorizons.com/seminars/public-seminars}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This organisation offers remote seminars on causal mediation analysis via zoom on a regular basis. It might be useful to check when the next seminar is on from time to time. There is a cost involved.}
+\end{itemize}
+
+\hypertarget{example-syntax-1}{%
+\section{Example syntax}\label{example-syntax-1}}
+
+\url{http://www.statmodel.com/examples/penn.shtml\#extendSEM}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Example mplus scripts from the paper ``Applications of causally defined direct and indirect effects in mediation analysis using SEM in Mplus''}
+\end{itemize}
+
+\url{http://www.statmodel.com/mplusbook/chapter8.shtml}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Example mplus scripts from the textbook Chapter 8 focusing on mediation of binary and count variables. Good examples include that for Table 8.9, Table 8.22, Table 8.2 and Table 8.5.}
+\end{itemize}
+
+\url{https://www.tandfonline.com/doi/full/10.1080/10705511.2020.1811709}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{See supplementary material from Rijnhart et al., (2020) paper for example Stata codes for running causal mediation models with binary outcomes.}
+\end{itemize}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
