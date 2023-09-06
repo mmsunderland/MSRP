@@ -1,7 +1,7 @@
 --- 
 title: "Matilda Statistics Curated lists of Resources"
 author: "Matthew Sunderland & Tim Slade"
-date: "2023-09-06"
+date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
@@ -30,4 +30,9 @@ You will find each of the individual lists in the left hand column that focus on
 This document was created using bookdown and the source code can be found on Github via clicking the "View book source" link at the bottom of the left hand column. 
 
 
-
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
