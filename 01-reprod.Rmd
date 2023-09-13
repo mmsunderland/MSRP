@@ -9,7 +9,7 @@ DeBruine, L., Barr, D. (2021). Data skills for reproducible research. Self-publi
 
 Epskamp, S. (2019). Reproducibility and Replicability in a fast-paced methodological world, Advances in Methods and Practices in Psychological Science, 2(2), 145-155.
  
-- *Excellent overview of why we need reproducibility and replicability in data analysis. Provides hints and hips on how to improve reproducibility of results and selecting software to assist.*
+- *Excellent overview of why we need reproducibility and replicability in data analysis. Provides hints and tips on how to improve reproducibility of results and selecting software to assist.*
 
 Baumer, B., Centinkaya-Rundel, M, Bray, A., et al. (2014). R Markdown: Integrating a reproducible analysis tool into introductory statistics, Technology Innovations in Statistics Education, 8(1). https://escholarship.org/uc/item/90b2f5xh 
 
