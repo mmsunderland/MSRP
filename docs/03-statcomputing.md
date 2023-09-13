@@ -19,9 +19,9 @@ In this list we cover some of the more commonly used statistical programs. This 
 
 -	*Excellent website from UCLA on the basics of SPSS, including fundamentals, reading raw data, and data management.*
 
-<http://milton-the-cat.rocks/home/dsus_oditi.html> 
+<https://milton-the-cat.rocks/dsus_oditi.html> 
 
--	*An awesome series of videos on the use of SPSS by Andy Field taken from his textbook “Discovering Statistics Using IBM SPSS Statistics”. I also would advise getting a copy of the textbook.  <https://www.amazon.com/Discovering-Statistics-Using-IBM-SPSS-ebook/dp/B085VRM9GS/ref=sr_1_5?dchild=1&qid=1612743028&refinements=p_27%3AAndy+Field&s=books&sr=1-5&text=Andy+Field>* 
+-	*An awesome series of videos on the use of SPSS by Andy Field taken from his textbook “Discovering Statistics Using IBM SPSS Statistics”. I also would advise getting a copy of the textbook.  <https://amzn.asia/d/0CC4lWt>. In fact Andy Field's main website is amazing and would suggest everyone check it out <https://www.discoveringstatistics.com/>* 
 
 <https://cce.sydney.edu.au/course/SPSS> 
 
