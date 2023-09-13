@@ -1,12 +1,12 @@
 {
-    "id": "5E455AA6",
+    "id": "19FA8844",
     "path": "~/GitHub/curated-lists/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "3339766924",
     "contents": "",
     "dirty": false,
-    "created": 1693961319484.0,
+    "created": 1694647431978.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
@@ -14,11 +14,11 @@
         "Source": "Source"
     },
     "folds": "",
-    "lastKnownWriteTime": 1693961217,
+    "lastKnownWriteTime": 1694647374,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1693961217,
+    "last_content_update": 1694647374,
     "read_only": false,
     "read_only_alternatives": []
 }
