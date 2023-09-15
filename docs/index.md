@@ -1,7 +1,7 @@
 --- 
 title: "Matilda Statistics Curated lists of Resources"
 author: "Matthew Sunderland & Tim Slade"
-date: "2023-09-14"
+date: "2023-09-15"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:

@@ -45,9 +45,6 @@ Collier, J. (2009). Using SPSS syntax a beginner’s guide. SAGE: Los Angeles, C
 
 -	*An R Markdown cheat sheet*
 
-<https://finnstats.com/index.php/2021/04/02/tidyverse-in-r/> 
-
-- *A quick guide to cleaning and manipulating using the “tidyverse”*
 
 ## Online courses/workshops
 
