@@ -45,7 +45,7 @@
             "type": "book"
         },
         {
-            "URL": "https://CRAN.R-project.org/package=bookdown",
+            "URL": "https://github.com/rstudio/bookdown",
             "author": [
                 {
                     "family": "Xie",
@@ -81,13 +81,13 @@
                     ]
                 ]
             },
-            "note": "R package version 1.43",
+            "note": "R package version 1.44",
             "title": "Knitr: A general-purpose package for dynamic report generation in r",
             "title-short": "Knitr",
             "type": "book"
         },
         {
-            "URL": "https://CRAN.R-project.org/package=rmarkdown",
+            "URL": "https://github.com/rstudio/rmarkdown",
             "author": [
                 {
                     "family": "Allaire",
@@ -142,7 +142,7 @@
                     ]
                 ]
             },
-            "note": "R package version 2.23",
+            "note": "R package version 2.24",
             "title": "Rmarkdown: Dynamic documents for r",
             "title-short": "Rmarkdown",
             "type": "book"

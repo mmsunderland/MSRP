@@ -1,7 +1,7 @@
 --- 
 title: "Matilda Statistics Curated lists of Resources"
 author: "Matthew Sunderland & Tim Slade"
-date: "2023-09-15"
+date: "2024-02-06"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
@@ -15,9 +15,9 @@ csl: "chicago-fullnote-bibliography.csl"
 
 # Welcome
 
-> *"The list could surely go on, and there is nothing more wonderful than a list, instrument of wondrous hypotyposis."*
+> *"Beginning of the teaching, explaining to the heart, instructing the ignorant, to know all that exists, created by Ptah, brought into being by Thoth, the sky with its features, the earth and what is in it, the bend of the mountain, and what is washed by the primeval waters, consisting of all that is useful, illuminated by Ra, all that is made to grow upon earth, reported by the scribe of god's books in the House of Life Amenope son of Amenope"*
 >
-> --- Umberto Eco
+> --- The Onomasticon of Amenope
 
 This book was written to provide easy access to the series of Matilda Centre Statistic's curated lists of resources. The lists were assembled and annotated on a variety of topics tailored to the needs of researchers at the [Matilda Centre for Research in Mental Health and Substance Use](https://www.sydney.edu.au/matilda-centre/). 
 
