@@ -48,15 +48,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -64,23 +66,20 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Matilda Statistics Curated lists of Resources},
+  pdftitle={Matilda Statistics Resource Portal},
   pdfauthor={Matthew Sunderland \& Tim Slade},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Matilda Statistics Curated lists of Resources}
+\title{Matilda Statistics Resource Portal}
 \author{Matthew Sunderland \& Tim Slade}
-\date{2024-02-06}
+\date{2025-01-13}
 
 \begin{document}
 \maketitle
@@ -89,33 +88,29 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{welcome}{%
-\chapter{Welcome}\label{welcome}}
+\chapter{Welcome to the MSRP}\label{welcome-to-the-msrp}
 
 \begin{quote}
-\emph{``Beginning of the teaching, explaining to the heart, instructing the ignorant, to know all that exists, created by Ptah, brought into being by Thoth, the sky with its features, the earth and what is in it, the bend of the mountain, and what is washed by the primeval waters, consisting of all that is useful, illuminated by Ra, all that is made to grow upon earth, reported by the scribe of god's books in the House of Life Amenope son of Amenope''}
+\emph{A one-stop statistical shop for all your research needs}
 
---- The Onomasticon of Amenope
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{needfulthings.jpg}
 \end{quote}
 
-This book was written to provide easy access to the series of Matilda Centre Statistic's curated lists of resources. The lists were assembled and annotated on a variety of topics tailored to the needs of researchers at the \href{https://www.sydney.edu.au/matilda-centre/}{Matilda Centre for Research in Mental Health and Substance Use}.
+This book was written to provide easy access to the series of Matilda Centre Statistical resources. The chapters were assembled and annotated on a variety of topics tailored to the needs of researchers at the \href{https://www.sydney.edu.au/matilda-centre/}{Matilda Centre for Research in Mental Health and Substance Use}.
 
 This book is a living and evolving document with regular additions made to each chapter as well as additional chapters based on further need. We encourage you to share this document widely and feel free to provide suggestions for additional resources, new chapters, or edits by contacting either \href{mailto:\%20matthew.sunderland@sydney.edu.au}{Matthew Sunderland} or \href{mailto:\%20tim.slade@sydney.edu.au}{Tim Slade}.
 
-\hypertarget{usage}{%
-\section{Usage}\label{usage}}
+\section{Usage}\label{usage}
 
-You will find each of the individual lists in the left hand column that focus on specific topics of interest. Within each list you will find several categories of resources including but not limited to textbooks, journal articles, example code, YouTube lectures and videos, and other useful websites or blogs.
+You will find each of the individual topics in the left hand column. Within each chapter you will find several categories of resources including but not limited to textbooks, journal articles, example code, YouTube lectures and videos, and other useful websites or blogs.
 
 This document was created using bookdown and the source code can be found on Github via clicking the ``View book source'' link at the bottom of the left hand column.
 
-\hypertarget{reproducible-and-replicable-data-analysis}{%
-\chapter{Reproducible and replicable data analysis}\label{reproducible-and-replicable-data-analysis}}
+\chapter{Reproducible and replicable data analysis}\label{reproducible-and-replicable-data-analysis}
 
 This curated list provides resources to improve the reproducibility and replicability of your data analysis. In brief, these concepts represent the ability for anyone to take your analysis and be able to replicate and reproduce all your results. These concepts have always been important but have seen increasing attention given the replicability crisis in social psychology and science more broadly. Moreover, the open science movement and the ability to use online portals such as the OSF and GitHub have made these principles easier to implement. This list also contains useful guides on how to improve record keeping, organisation, coding, cleaning, and manipulating data while at the same time producing dynamic reports that track everything you do (and all the changes) during your data analysis. This list does rely heavily on using R software, but the same principles can be applied to other statistical software packages including Stata and SPSS. I would encourage more people to make the switch to R programming (it's not as hard as you might think). The main message is to use syntax/coding and annotate as much as possible! No more point-and-click or having to re-do tables in excel!!
 
-\hypertarget{journal-articles-and-textbooks}{%
-\section{Journal articles and textbooks}\label{journal-articles-and-textbooks}}
+\section{Journal articles and textbooks}\label{journal-articles-and-textbooks}
 
 DeBruine, L., Barr, D. (2021). Data skills for reproducible research. Self-published. \url{https://psyteachr.github.io/reprores-v2/index.html\#how-to-learn-data-skills}
 
@@ -165,8 +160,7 @@ Collier, J. (2009). Using SPSS syntax a beginner's guide. SAGE: Los Angeles, CA.
   \emph{A textbook for those who want to move from point-and-click to programming using syntax in SPSS\ldots{} but really if you are going to the effort to learn syntax in SPSS then you are probably better off starting fresh in R.}
 \end{itemize}
 
-\hypertarget{websites}{%
-\section{Websites}\label{websites}}
+\section{Websites}\label{websites}
 
 \url{https://osf.io/}
 
@@ -200,8 +194,7 @@ Collier, J. (2009). Using SPSS syntax a beginner's guide. SAGE: Los Angeles, CA.
   \emph{An R Markdown cheat sheet}
 \end{itemize}
 
-\hypertarget{online-coursesworkshops}{%
-\section{Online courses/workshops}\label{online-coursesworkshops}}
+\section{Online courses/workshops}\label{online-coursesworkshops}
 
 \url{https://reproducible-analysis-workshop.readthedocs.io/en/latest/6.RMarkdown-knitr.html}
 
@@ -235,13 +228,11 @@ Collier, J. (2009). Using SPSS syntax a beginner's guide. SAGE: Los Angeles, CA.
   \emph{Online lecture on designing a reproducible workflow with R and Github.}
 \end{itemize}
 
-\hypertarget{data-visualisation}{%
-\chapter{Data visualisation}\label{data-visualisation}}
+\chapter{Data visualisation}\label{data-visualisation}
 
 This list provide resources for those who want to produce fancy figure and tables when communicating their results. Data visualisation is an important aspect of statistics and requires careful thought about how to appropriately and effectively present your results in a visually pleasing manner.
 
-\hypertarget{journal-articles-and-textbooks-1}{%
-\section{Journal articles and textbooks}\label{journal-articles-and-textbooks-1}}
+\section{Journal articles and textbooks}\label{journal-articles-and-textbooks-1}
 
 Wilkinson, L. (2005). The grammar of graphics (2nd Edition). Springer.
 
@@ -307,8 +298,7 @@ Mitchell, M. N. (2012). A visual guide to stata graphics. Stata Press.
   \emph{Introductory textbook for graphing using STATA. Also has accompanying website \url{https://www.stata.com/support/faqs/graphics/gph/stata-graphs/}}
 \end{itemize}
 
-\hypertarget{websites-1}{%
-\section{Websites}\label{websites-1}}
+\section{Websites}\label{websites-1}
 
 \url{https://www.jscarlton.net/post/2015-10-24visualizinglogistic/}
 
@@ -454,8 +444,7 @@ Mitchell, M. N. (2012). A visual guide to stata graphics. Stata Press.
   \emph{Google charts. This is more for developing interactive charts for websites/mobile devices.}
 \end{itemize}
 
-\hypertarget{online-courses-and-videos}{%
-\section{Online courses and videos}\label{online-courses-and-videos}}
+\section{Online courses and videos}\label{online-courses-and-videos}
 
 \url{https://www.andrew.cmu.edu/user/achoulde/94842/lectures/lecture13/lecture13-94842.html}
 
@@ -513,13 +502,11 @@ Mitchell, M. N. (2012). A visual guide to stata graphics. Stata Press.
   \emph{Online data viz course offered by Harvard via EdX.}
 \end{itemize}
 
-\hypertarget{statistical-computing}{%
-\chapter{Statistical Computing}\label{statistical-computing}}
+\chapter{Statistical Computing}\label{statistical-computing}
 
 In this list we cover some of the more commonly used statistical programs. This list is to provide introductory materials when starting to use a particular software package. In terms of getting access to these programs, you should be able to download SPSS and SAS from the University of Sydney IT services. Stata requires an individual licence, or it can be used for free remotely via the Usyd Citrix Workspace App. R and Rstudio (highly recommended) can be downloaded for free along with the many R packages (\url{https://www.r-project.org/} \url{https://rstudio.com/}). Mplus requires a license and we currently have a couple of copies of Mplus installed on the Matilda Stats computers (i.e., in Matt's office and on the Statistics's laptop).
 
-\hypertarget{spss}{%
-\section{SPSS}\label{spss}}
+\section{SPSS}\label{spss}
 
 \url{https://www.spss-tutorials.com/}
 
@@ -537,7 +524,7 @@ In this list we cover some of the more commonly used statistical programs. This 
   \emph{Online tutorials on SPSS offered by Kent State University. Covers getting started, working with data, exploring, and analysing data.}
 \end{itemize}
 
-\url{https://lo.unisa.edu.au/mod/book/view.php?id=646443\&chapterid=106603}
+\url{https://lo.unisa.edu.au/mod/book/view.php?id=646443&chapterid=106603}
 
 \begin{itemize}
 \tightlist
@@ -601,8 +588,7 @@ Levesque, R., (2005). SPSS programming and data management, 2nd Edition. SPSS In
   \emph{Textbook available here \url{https://spsstools.net/static/spss-programming-book/SPSS_Programming_and_Data_Management_2nd_edition.pdf}. Offers a large amount of detail in using SPSS from basics to advanced programming and macros. It is also quite helpful if you want to migrate to SAS from SPSS\ldots{} but can be a little dry.}
 \end{itemize}
 
-\hypertarget{stata}{%
-\section{Stata}\label{stata}}
+\section{Stata}\label{stata}
 
 \url{https://www.stata.com/bookstore/}
 
@@ -660,8 +646,7 @@ Levesque, R., (2005). SPSS programming and data management, 2nd Edition. SPSS In
   \emph{This book is a little old but it provides some good examples of how to carry out different data analysis procedures (e.g.~logistic regression, survival analysis, GEE) in Stata.}
 \end{itemize}
 
-\hypertarget{sas}{%
-\section{SAS}\label{sas}}
+\section{SAS}\label{sas}
 
 \url{https://online.stat.psu.edu/stat480/lesson/1}
 
@@ -703,7 +688,7 @@ Levesque, R., (2005). SPSS programming and data management, 2nd Edition. SPSS In
   \emph{More textbooks officially endorsed by SAS but this time focused on analysis and various types of statistical procedures.}
 \end{itemize}
 
-\url{https://www.lexjansen.com/cgi-bin/xsl_transform.php?x=sbt\&c=sugi}
+\url{https://www.lexjansen.com/cgi-bin/xsl_transform.php?x=sbt&c=sugi}
 
 \begin{itemize}
 \tightlist
@@ -735,8 +720,7 @@ DiMaggio, C., (2013). SAS for Epidemiologists: Applications and Methods. New Yor
   \emph{A comprehensive textbook mostly designed for students studying public health and epidemiology. Covers topics such as data cleaning, programming, categorical data analysis, ANOVA, linear regression. The textbook is available online via Usyd library \url{https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/1c0ug48/alma991019154709705106}}
 \end{itemize}
 
-\hypertarget{r}{%
-\section{R}\label{r}}
+\section{R}\label{r}
 
 \textbf{Important note: R is a large and flexible program with a tonne of free resources available. This is just the tip of the iceberg and if you are wanting to use R then Google becomes your best friend. It is easy to get overwhelmed, so I suggest you start working on smaller projects and tackle tasks and topics that are suitable for that project one at a time. }
 
@@ -856,8 +840,7 @@ DiMaggio, C., (2013). SAS for Epidemiologists: Applications and Methods. New Yor
   \emph{A link to the online version of the book ``R Graphics Cookbook'' which provides practical ``recipes'' for visualising data}
 \end{itemize}
 
-\hypertarget{mplus}{%
-\section{Mplus}\label{mplus}}
+\section{Mplus}\label{mplus}
 
 \url{https://stats.idre.ucla.edu/mplus/}
 
@@ -923,8 +906,7 @@ DiMaggio, C., (2013). SAS for Epidemiologists: Applications and Methods. New Yor
   \emph{Highlights a very useful package in R that works with Mplus called MplusAutomation. This PDF provides some basic examples on how to start using Mplus with R. It takes advantage of the data manipulation and graphing power of R but the statistical power of the Mplus engine.}
 \end{itemize}
 
-\hypertarget{comparing-programs}{%
-\section{Comparing programs}\label{comparing-programs}}
+\section{Comparing programs}\label{comparing-programs}
 
 \textbf{Important note: there is no right or wrong package to use if it can do the task that you require. Our advice would be to learn something that you feel most comfortable with using. Many people already have experience with SPSS and you can continue to use it, other people want to start fresh and might begin learning R or Mplus. The following links might help guide you in terms of which software package to start using. }
 
@@ -952,13 +934,11 @@ DiMaggio, C., (2013). SAS for Epidemiologists: Applications and Methods. New Yor
   \emph{Comparison of programs by University of SA.}
 \end{itemize}
 
-\hypertarget{mlm-and-latent-growth-models}{%
-\chapter{MLM and Latent growth models}\label{mlm-and-latent-growth-models}}
+\chapter{MLM and Latent growth models}\label{mlm-and-latent-growth-models}
 
 This list provides resources on multilevel models (MLM) and latent growth models for the analysis of longitudinal data. Both MLM and latent growth models are similar but different frameworks to analyse change over time. Both have strengths and weaknesses and both frameworks might be more or less suitable depending on the specific research question and the type of data that you want to analyse. Whilst MLM can be used for other types of clustered or multi-level structured data, we focus here on the use of MLM for repeated measures or longitudinal analysis.
 
-\hypertarget{journal-articles-and-textbooks-2}{%
-\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-2}}
+\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-2}
 
 Hoffman, L. (2015). Longitudinal analysis: modelling within-person fluctuation and change. Routledge.
 
@@ -1064,8 +1044,7 @@ McNeish, D., Matta, T. (2018). Differentiating between mixed-effects and latent-
   \emph{An excellent article outlining the similarities and differences between MLM and latent growth models as well as discussion of the strengths and weaknesses and how to select the best framework for you research question/data. }
 \end{itemize}
 
-\hypertarget{websites-2}{%
-\section{Websites}\label{websites-2}}
+\section{Websites}\label{websites-2}
 
 \url{https://www.pilesofvariance.com/}
 
@@ -1099,8 +1078,7 @@ McNeish, D., Matta, T. (2018). Differentiating between mixed-effects and latent-
   \emph{The centre for multilevel modelling at the University of Bristol provides a range of resources on multilevel modelling in general (not just applied to longitudinal data). }
 \end{itemize}
 
-\hypertarget{online-courses-and-videos-1}{%
-\section{Online courses and videos}\label{online-courses-and-videos-1}}
+\section{Online courses and videos}\label{online-courses-and-videos-1}
 
 \url{https://youtube.com/playlist?list=PLQGe6zcSJT0VxMZUN6DBuhIoCRZNoA2Vz}
 
@@ -1142,8 +1120,7 @@ McNeish, D., Matta, T. (2018). Differentiating between mixed-effects and latent-
   \emph{Online notes for a seminar based on Singer and Willett textbook. Focuses on comparing different analytic strategies, multilevel level models, and treatment effects over time. }
 \end{itemize}
 
-\hypertarget{example-syntax}{%
-\section{Example syntax}\label{example-syntax}}
+\section{Example syntax}\label{example-syntax}
 
 \url{https://stats.idre.ucla.edu/mplus/output/lgcm_mlm/}
 
@@ -1177,13 +1154,11 @@ McNeish, D., Matta, T. (2018). Differentiating between mixed-effects and latent-
   \emph{Contains many example files and scripts from Mplus, SAS, OpenMX, etc. The examples come from papers published by Kevin Grimm.}
 \end{itemize}
 
-\hypertarget{causal-mediation-analysis}{%
-\chapter{Causal Mediation Analysis}\label{causal-mediation-analysis}}
+\chapter{Causal Mediation Analysis}\label{causal-mediation-analysis}
 
 This list provides resources that outline causal mediation analysis and the potential outcomes framework. Specifically you will find resources defining and describing causal mediation analysis, how it differs from traditional mediation approach, and practical guidelines for conducting an analysis and how best to interpret the results.
 
-\hypertarget{journal-articles-and-textbooks-3}{%
-\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-3}}
+\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-3}
 
 VanderWeele, T. (2015). Explanation in causal inference: methods for mediation and interaction. Oxford University Press.
 
@@ -1249,8 +1224,7 @@ Tingley, D., Yamamoto, T., Hirose, K., Keele, L., Imai, K. (2014). Mediation: R 
   \emph{Provides and overview and description of an R package to conduct causal mediation analysis using model-based and design-based approaches as described by Imai.}
 \end{itemize}
 
-\hypertarget{websites-3}{%
-\section{Websites}\label{websites-3}}
+\section{Websites}\label{websites-3}
 
 \url{https://www.publichealth.columbia.edu/research/population-health-methods/causal-mediation}
 
@@ -1276,8 +1250,7 @@ Tingley, D., Yamamoto, T., Hirose, K., Keele, L., Imai, K. (2014). Mediation: R 
   \emph{Kosuke Imai's website providing list of publications and links to presentations and statistical software to conduct mediation analysis using Imai's approach in R.}
 \end{itemize}
 
-\hypertarget{online-courses-and-videos-2}{%
-\section{Online courses and videos}\label{online-courses-and-videos-2}}
+\section{Online courses and videos}\label{online-courses-and-videos-2}
 
 \url{https://www.youtube.com/watch?v=EI5y6pV87-Q}
 \url{https://www.youtube.com/watch?v=WyqdGxsnR5w}
@@ -1316,8 +1289,7 @@ Tingley, D., Yamamoto, T., Hirose, K., Keele, L., Imai, K. (2014). Mediation: R 
   \emph{This organisation offers remote seminars on causal mediation analysis via zoom on a regular basis. It might be useful to check when the next seminar is on from time to time. There is a cost involved.}
 \end{itemize}
 
-\hypertarget{example-syntax-1}{%
-\section{Example syntax}\label{example-syntax-1}}
+\section{Example syntax}\label{example-syntax-1}
 
 \url{http://www.statmodel.com/examples/penn.shtml\#extendSEM}
 
@@ -1343,13 +1315,11 @@ Tingley, D., Yamamoto, T., Hirose, K., Keele, L., Imai, K. (2014). Mediation: R 
   \emph{See supplementary material from Rijnhart et al., (2020) paper for example Stata codes for running causal mediation models with binary outcomes.}
 \end{itemize}
 
-\hypertarget{meta-analysis}{%
-\chapter{Meta-analysis}\label{meta-analysis}}
+\chapter{Meta-analysis}\label{meta-analysis}
 
 This list provides resources that outline basic meta-analysis to summary data obtained from systematic reviews as well as more complex meta-analytic techniques such as network meta-analysis and structural equation modeling meta-analysis. There are several useful textbooks all available online that comprehensive outline the steps required for various meta-analyses. The majority of resources utilise free software packages in R to conduct meta-analyses and present results however there are several specific software programs for meta-analysis outlined in the software section.
 
-\hypertarget{journal-articles-and-textbooks-4}{%
-\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-4}}
+\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-4}
 
 Hedges, L. V. \& Olkin, I. (2014) Statistical Method for Meta-analysis. Elsevier Science \& Technology.
 
@@ -1423,8 +1393,7 @@ Schwarzer, G., Carpenter, J. R., \& Rucker, G. (2015). Meta-analysis with R. Spr
   \emph{A practical textbook outlining all the steps required to conduct a meta-analysis using the R package meta. \url{https://github.com/guido-s/meta} }
 \end{itemize}
 
-\hypertarget{online-courses-and-videos-3}{%
-\section{Online courses and videos}\label{online-courses-and-videos-3}}
+\section{Online courses and videos}\label{online-courses-and-videos-3}
 
 \url{https://www.youtube.com/watch?v=lO6s8dFBmPc}
 
@@ -1450,8 +1419,7 @@ Schwarzer, G., Carpenter, J. R., \& Rucker, G. (2015). Meta-analysis with R. Spr
   \emph{1.5hr workshop on conducting open and reproducible meta-analyses.}
 \end{itemize}
 
-\hypertarget{software}{%
-\section{Software}\label{software}}
+\section{Software}\label{software}
 
 Comprehensive meta analysis \url{https://meta-analysis.com/}
 
@@ -1477,13 +1445,11 @@ Metafor (R package) \url{https://www.metafor-project.org/doku.php/metafor}
   \emph{One of the free and open sources R packages to conduct meta-analysis. It requires some knowledge of R but there are several examples and tutorials available to conduct the analysis using metafor.}
 \end{itemize}
 
-\hypertarget{missing-data-analysis}{%
-\chapter{Missing data analysis}\label{missing-data-analysis}}
+\chapter{Missing data analysis}\label{missing-data-analysis}
 
 Unless you manage to get perfect retention rates or are able to achieve 100\% response rates on a survey, you will at some stage need to conduct a missing data analysis. These types of analysis can be quite simple in terms of trying to understand whether there are any differences between completers vs non-completers on a range of data that you have available, testing different assumptions of missingness, or conducting some form of imputation to ``fill in the blanks''. This list of resources provides overviews, guides, and software examples to conduct a range of missing data analysis.
 
-\hypertarget{journal-articles-and-textbooks-5}{%
-\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-5}}
+\section{Journal Articles and Textbooks}\label{journal-articles-and-textbooks-5}
 
 Van Buuren, S. (2018) Flexible imputation of missing data. Second edition. Chapman \& Hall/CRC.
 
@@ -1533,8 +1499,7 @@ Grund, S., Ludtke, O., Robitzsh, A. (2016). Multiple imputation of multilevel mi
   \emph{Discusses the additional complexity of using multiple imputation for multilevel data (e.g., when there are multiple levels or clustering in the data). Provides an introduction to the pan R package to address this issue. }
 \end{itemize}
 
-\hypertarget{websites-4}{%
-\section{Websites}\label{websites-4}}
+\section{Websites}\label{websites-4}
 
 \url{https://www.publichealth.columbia.edu/research/population-health-methods/missing-data-and-multiple-imputation}
 
@@ -1576,8 +1541,7 @@ Grund, S., Ludtke, O., Robitzsh, A. (2016). Multiple imputation of multilevel mi
   \emph{A blog post examining the benefits of multiple imputation over maximum likelihood to handle missing data. Also there is a follow-up blog on the same website about the number of imputations required. }
 \end{itemize}
 
-\hypertarget{online-courses-and-videos-4}{%
-\section{Online courses and videos}\label{online-courses-and-videos-4}}
+\section{Online courses and videos}\label{online-courses-and-videos-4}
 
 \url{https://vimeo.com/147353266}
 \url{https://vimeo.com/147723900}
@@ -1612,8 +1576,7 @@ Grund, S., Ludtke, O., Robitzsh, A. (2016). Multiple imputation of multilevel mi
   \emph{An introduction lecture on missing data handling with Mplus by Dr James Peugh at University of Kentucky.}
 \end{itemize}
 
-\hypertarget{software-1}{%
-\section{Software}\label{software-1}}
+\section{Software}\label{software-1}
 
 BLIMP \url{https://www.appliedmissingdata.com/blimp}
 

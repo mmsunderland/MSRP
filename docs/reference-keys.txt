@@ -1,4 +1,4 @@
-welcome
+welcome-to-the-msrp
 usage
 reproducible-and-replicable-data-analysis
 journal-articles-and-textbooks
@@ -34,5 +34,3 @@ journal-articles-and-textbooks-5
 websites-4
 online-courses-and-videos-4
 software-1
-welcome-to-the-msrp-a-one-stop-statistical-shop-for-all-your-research-needs
-welcome-to-the-msrp
