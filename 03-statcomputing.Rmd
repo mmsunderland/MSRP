@@ -1,6 +1,6 @@
 # Statistical Computing
 
-In this list we cover some of the more commonly used statistical programs. This list is to provide introductory materials when starting to use a particular software package. In terms of getting access to these programs, you should be able to download SPSS and SAS from the University of Sydney IT services. Stata requires an individual licence, or it can be used for free remotely via the Usyd Citrix Workspace App. R and Rstudio (highly recommended) can be downloaded for free along with the many R packages (<https://www.r-project.org/> <https://rstudio.com/>). Mplus requires a license and we currently have a couple of copies of Mplus installed on the Matilda Stats computers (i.e., in Matt’s office and on the Statistics’s laptop).
+In this chapter we cover some of the more commonly used statistical programs. This chapter provides introductory materials when starting to use a particular software package. In terms of getting access to these programs, you should be able to download SPSS and SAS from the University of Sydney IT services. Stata requires an individual licence, or it can be used for free remotely via the Usyd Citrix Workspace App. R and Rstudio (highly recommended) can be downloaded for free along with the many R packages (<https://www.r-project.org/> <https://rstudio.com/>). Mplus requires a license and we currently have a couple of copies of Mplus installed on the Matilda Stats computers (i.e., in Matt’s office and on the Statistics’s laptop).
 
 ## SPSS
 <https://www.spss-tutorials.com/> 

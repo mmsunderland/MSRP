@@ -1,6 +1,6 @@
 # Causal Mediation Analysis
 
-This list provides resources that outline causal mediation analysis and the potential outcomes framework. Specifically you will find resources defining and describing causal mediation analysis, how it differs from traditional mediation approach, and practical guidelines for conducting an analysis and how best to interpret the results. 
+This chapter provides resources that outline causal mediation analysis and the potential outcomes framework. Specifically, you will find resources defining and describing causal mediation analysis, how it differs from traditional mediation approach, and practical guidelines for conducting an analysis and how best to interpret the results. 
 
 ## Journal Articles and Textbooks
 VanderWeele, T. (2015). Explanation in causal inference: methods for mediation and interaction. Oxford University Press.

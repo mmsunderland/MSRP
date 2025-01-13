@@ -1,6 +1,6 @@
 # Data visualisation
 
-This list provide resources for those who want to produce fancy figure and tables when communicating their results. Data visualisation is an important aspect of statistics and requires careful thought about how to appropriately and effectively present your results in a visually pleasing manner.
+This chapter provide resources for those who want to produce fancy figures and tables when communicating their results. Data visualisation is an important aspect of statistics and requires careful thought about how to appropriately and effectively present your results in a visually pleasing manner.
 
 ## Journal articles and textbooks
 

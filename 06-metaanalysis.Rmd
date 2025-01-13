@@ -1,6 +1,6 @@
 # Meta-analysis
 
-This list provides resources that outline basic meta-analysis to summary data obtained from systematic reviews as well as more complex meta-analytic techniques such as network meta-analysis and structural equation modeling meta-analysis. There are several useful textbooks all available online that comprehensive outline the steps required for various meta-analyses. The majority of resources utilise free software packages in R to conduct meta-analyses and present results however there are several specific software programs for meta-analysis outlined in the software section.  
+This chapter provides resources that outline basic meta-analysis to summary data obtained from systematic reviews as well as more complex meta-analytic techniques such as network meta-analysis and structural equation modeling meta-analysis. There are several useful textbooks all available online that comprehensively outline the steps required for various meta-analyses. The majority of resources utilise free software packages in R to conduct meta-analyses and present results, however there are several specific software programs for meta-analysis outlined in the software section.  
 
 ## Journal Articles and Textbooks
 Hedges, L. V. & Olkin, I. (2014) Statistical Method for Meta-analysis. Elsevier Science & Technology. 

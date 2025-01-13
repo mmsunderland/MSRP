@@ -1,6 +1,6 @@
 # Missing data analysis
 
-Unless you manage to get perfect retention rates or are able to achieve 100% response rates on a survey, you will at some stage need to conduct a missing data analysis. These types of analysis can be quite simple in terms of trying to understand whether there are any differences between completers vs non-completers on a range of data that you have available, testing different assumptions of missingness, or conducting some form of imputation to "fill in the blanks". This list of resources provides overviews, guides, and software examples to conduct a range of missing data analysis.   
+Unless you manage to get perfect retention rates or are able to achieve 100% response rates on a survey, you will at some stage need to conduct a missing data analysis. These types of analysis can be quite simple in terms of trying to understand whether there are any differences between completers vs non-completers on a range of data that you have available, testing different assumptions of missingness, or conducting some form of imputation to "fill in the blanks". This chapter provides overviews, guides, and software examples to conduct a range of missing data analyses.   
 
 ## Journal Articles and Textbooks
 Van Buuren, S. (2018) Flexible imputation of missing data. Second edition. Chapman & Hall/CRC. 
