@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 1 Welcome to the MSRP | Matilda Statistics Resource Portal</title>
+<title>Chapter 9 Logistic regression | Matilda Statistics Resource Portal</title>
 <meta name="author" content="Matthew Sunderland &amp; Tim Slade">
-<meta name="description" content="This book contains the collection of statistical resources put together for the Matilda Centre,">
+<meta name="description" content="This chapter provides resources on a specific type of regression that we often utilise at the Matilda Centre and one that is relevant to the field of mental health and substance use research and...">
 <meta name="generator" content="bookdown 0.40 with bs4_book()">
-<meta property="og:title" content="Chapter 1 Welcome to the MSRP | Matilda Statistics Resource Portal">
+<meta property="og:title" content="Chapter 9 Logistic regression | Matilda Statistics Resource Portal">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This book contains the collection of statistical resources put together for the Matilda Centre,">
+<meta property="og:description" content="This chapter provides resources on a specific type of regression that we often utilise at the Matilda Centre and one that is relevant to the field of mental health and substance use research and...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 1 Welcome to the MSRP | Matilda Statistics Resource Portal">
-<meta name="twitter:description" content="This book contains the collection of statistical resources put together for the Matilda Centre,">
+<meta name="twitter:title" content="Chapter 9 Logistic regression | Matilda Statistics Resource Portal">
+<meta name="twitter:description" content="This chapter provides resources on a specific type of regression that we often utilise at the Matilda Centre and one that is relevant to the field of mental health and substance use research and...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html"><span class="header-section-number">1</span> Welcome to the MSRP</a></li>
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the MSRP</a></li>
 <li><a class="" href="reproducible-and-replicable-data-analysis.html"><span class="header-section-number">2</span> Reproducible and replicable data analysis</a></li>
 <li><a class="" href="data-visualisation.html"><span class="header-section-number">3</span> Data visualisation</a></li>
 <li><a class="" href="statistical-computing.html"><span class="header-section-number">4</span> Statistical Computing</a></li>
@@ -51,7 +51,7 @@
 <li><a class="" href="causal-mediation-analysis.html"><span class="header-section-number">6</span> Causal Mediation Analysis</a></li>
 <li><a class="" href="meta-analysis.html"><span class="header-section-number">7</span> Meta-analysis</a></li>
 <li><a class="" href="missing-data-analysis.html"><span class="header-section-number">8</span> Missing data analysis</a></li>
-<li><a class="" href="logistic-regression.html"><span class="header-section-number">9</span> Logistic regression</a></li>
+<li><a class="active" href="logistic-regression.html"><span class="header-section-number">9</span> Logistic regression</a></li>
 </ul>
 
         <div class="book-extra">
@@ -59,39 +59,35 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="welcome-to-the-msrp" class="section level1" number="1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="logistic-regression" class="section level1" number="9">
 <h1>
-<span class="header-section-number">1</span> Welcome to the MSRP<a class="anchor" aria-label="anchor" href="#welcome-to-the-msrp"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9</span> Logistic regression<a class="anchor" aria-label="anchor" href="#logistic-regression"><i class="fas fa-link"></i></a>
 </h1>
-<blockquote>
-<p><em>A one-stop statistical shop for all your research needs</em></p>
-<div class="inline-figure"><img src="needfulthings.jpg" style="width:100.0%"></div>
-</blockquote>
-<p>This book was written to provide easy access to the series of Matilda Centre Statistical resources. The chapters were assembled and annotated on a variety of topics tailored to the needs of researchers at the <a href="https://www.sydney.edu.au/matilda-centre/">Matilda Centre for Research in Mental Health and Substance Use</a>.</p>
-<p>This book is a living and evolving document with regular additions made to each chapter as well as additional chapters based on further need. We encourage you to share this document widely and feel free to provide suggestions for additional resources, new chapters, or edits by contacting either <a href="mailto:%20matthew.sunderland@sydney.edu.au">Matthew Sunderland</a> or <a href="mailto:%20tim.slade@sydney.edu.au">Tim Slade</a>.</p>
-<div id="usage" class="section level2" number="1.1">
+<p>This chapter provides resources on a specific type of regression that we often utilise at the Matilda Centre and one that is relevant to the field of mental health and substance use research and that is logistic regression. This type of regression differs from regular “linear” regression given that the outcome variable is considered categorical (either binary or multi-level) as opposed to continuous. So, for example, if you have a diagnostic variable that is your primary outcome coded as either 1 or 0 depending on whether the diagnosis is present or absent, then you could use logistic regression to determine significant associations with that diagnosis (in either a univariable or multivariable format). Standard logistic regressions tend to deal with binary outcomes, however it is possible to analyse categorical outcomes with more levels using either oridinal logistic regression (where there is a natural order to the categories) or multinomial logistic regression (where there is no order to the categories). This chapter will provide information on all regressions that involve categorical variables.</p>
+<div id="journal-articles-and-textbooks-6" class="section level2" number="9.1">
 <h2>
-<span class="header-section-number">1.1</span> Usage<a class="anchor" aria-label="anchor" href="#usage"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1</span> Journal Articles and Textbooks<a class="anchor" aria-label="anchor" href="#journal-articles-and-textbooks-6"><i class="fas fa-link"></i></a>
 </h2>
-<p>You will find each of the individual topics in the left hand column. Within each chapter you will find several categories of resources including but not limited to textbooks, journal articles, example code, YouTube lectures and videos, and other useful websites or blogs.</p>
-<p>This document was created using bookdown and the source code can be found on Github via clicking the “View book source” link at the bottom of the left hand column.</p>
-
+<p>Hosmer, D. W. and Lemeshow, S. (2013) Applied logistic regression. Wiley.</p>
+<ul>
+<li><em>This book provides a great introduction to logistic regression and it is particularly helpful if you have already been introduced to linear regression. Chapters in the book cover topics such as multiple logistic regression, interpreting logistic regression results, model-building, assessing model fit, multinomial and oridinal logistic regression, and correlated binary data. A copy of this textbook is available free online via Usyd library <a href="https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/12rahnq/alma991019090819705106" class="uri">https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/12rahnq/alma991019090819705106</a> </em></li>
+</ul>
 </div>
 </div>
   <div class="chapter-nav">
+<div class="prev"><a href="missing-data-analysis.html"><span class="header-section-number">8</span> Missing data analysis</a></div>
 <div class="empty"></div>
-<div class="next"><a href="reproducible-and-replicable-data-analysis.html"><span class="header-section-number">2</span> Reproducible and replicable data analysis</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#welcome-to-the-msrp"><span class="header-section-number">1</span> Welcome to the MSRP</a></li>
-<li><a class="nav-link" href="#usage"><span class="header-section-number">1.1</span> Usage</a></li>
+<li><a class="nav-link" href="#logistic-regression"><span class="header-section-number">9</span> Logistic regression</a></li>
+<li><a class="nav-link" href="#journal-articles-and-textbooks-6"><span class="header-section-number">9.1</span> Journal Articles and Textbooks</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/mmsunderland/curated-lists/blob/master/index.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/mmsunderland/curated-lists/edit/master/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/mmsunderland/curated-lists/blob/master/08-logisticreg.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/mmsunderland/curated-lists/edit/master/08-logisticreg.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

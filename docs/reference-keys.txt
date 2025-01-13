@@ -34,3 +34,5 @@ journal-articles-and-textbooks-5
 websites-4
 online-courses-and-videos-4
 software-1
+logistic-regression
+journal-articles-and-textbooks-6

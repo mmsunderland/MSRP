@@ -1,26 +1,26 @@
 {
-    "id": "19FA8844",
-    "path": "~/GitHub/curated-lists/index.Rmd",
-    "project_path": "index.Rmd",
+    "id": "39AF0B94",
+    "path": "~/GitHub/curated-lists/08-logisticreg.Rmd",
+    "project_path": "08-logisticreg.Rmd",
     "type": "r_markdown",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1694647431978.0,
+    "created": 1736748586860.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "19,32",
+        "cursorPosition": "10,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1736726158,
+    "lastKnownWriteTime": 1736743429,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1736726158,
+    "last_content_update": 1736743429,
     "read_only": false,
     "read_only_alternatives": []
 }

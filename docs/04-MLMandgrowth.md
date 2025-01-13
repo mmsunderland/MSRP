@@ -2,6 +2,9 @@
 
 This list provides resources on multilevel models (MLM) and latent growth models for the analysis of longitudinal data. Both MLM and latent growth models are similar but different frameworks to analyse change over time. Both have strengths and weaknesses and both frameworks might be more or less suitable depending on the specific research question and the type of data that you want to analyse. Whilst MLM can be used for other types of clustered or multi-level structured data, we focus here on the use of MLM for repeated measures or longitudinal analysis.  
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c5ab-JdMHuI?si=SyqAjxk8HKo-it2O"frameborder="0" data-external="1" allowfullscreen></iframe>
+  
 ## Journal Articles and Textbooks
 
 Hoffman, L. (2015). Longitudinal analysis: modelling within-person fluctuation and change. Routledge.
