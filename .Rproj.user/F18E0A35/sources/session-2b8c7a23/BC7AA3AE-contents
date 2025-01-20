@@ -1,0 +1,391 @@
+##### NHS co-occuring APC analysis ####
+
+library(harmonydata)
+library(tidyverse)
+library(APCI)
+library(survey)
+library(haven)
+library(nnet)
+library(reshape2)
+library(APCtools)
+library(mgcv)
+
+
+setwd("D:/OneDrive - The University of Sydney (Staff)/CRE/Standing on Giants/NHS comorbidity apc")
+
+### NHS 2001 ###
+nhs01 <- read_sas("nhs0164.sas7bdat")
+nhs01 <- nhs01 %>%
+  filter(AGE>=12) %>%
+  mutate(Study = "NHS01",
+         Age = AGE,  ## in five year age bands from 20 or over
+         Period = 2001,
+         sex = SEX, ## 1= male 2=female
+         weight=WEIGHTP,
+         k10 = K10, ## total ranging from 10-50
+         alc= ALCCONML) %>% ## average daily intake in mls in the past week
+  select(Study, Age, Period, sex, weight, k10, alc, REPWGT01:REPWGT30)
+
+nhs01 <- nhs01 %>%
+  mutate(agerec=as.factor(case_when(Age==12 ~ "20-24",
+                          Age==13 ~ "25-29",
+                          Age==14 ~ "30-34",
+                          Age==15 ~ "35-39",
+                          Age==16 ~ "40-44",
+                          Age==17 ~ "45-49",
+                          Age==18 ~ "50-54",
+                          Age==19 ~ "55-59",
+                          Age==20 ~ "60-64",
+                          Age==21 ~ "65-69",
+                          Age==22 ~ "70-74",
+                          Age==23 ~ "75+")))
+table(nhs01$agerec)
+
+
+### NHS 2004-05 ###
+nhs05 <- read_sas("nhs05pnb64.sas7bdat")
+nhs05 <- nhs05 %>%
+  filter(AGECB>=5) %>%
+  mutate(Study = "NHS05",
+         Age = AGECB,  ## in five year age bands from 20 or over
+         Period = 2004, 
+         sex = SEX, ## 1= male 2=female
+         weight=NHSFINWT,
+         k10 = MNKESSLR, ## total ranging from 10-50
+         alc = ALCWKLCB) %>% 
+  select(Study, Age, Period, sex, weight, k10, alc, WPM0101:WPM0160)
+
+nhs05 <- nhs05 %>%
+  mutate(agerec=as.factor(case_when(Age==5 ~ "20-24",
+                                    Age==6 ~ "25-29",
+                                    Age==7 ~ "30-34",
+                                    Age==8 ~ "35-39",
+                                    Age==9 ~ "40-44",
+                                    Age==10 ~ "45-49",
+                                    Age==11 ~ "50-54",
+                                    Age==12 ~ "55-59",
+                                    Age==13 ~ "60-64",
+                                    Age==14 ~ "65-69",
+                                    Age==15 ~ "70-74",
+                                    Age==16 ~ "75+",
+                                    Age==17 ~ "75+",
+                                    Age==18 ~ "75+")))
+
+### NHS 2007-08 ###
+nhs08 <- read_sas("nhs08bsp64.sas7bdat")
+nhs08 <- nhs08 %>%
+  filter(AGEPRSBN>=5) %>% 
+  mutate(Study = "NHS08",
+         Age = AGEPRSBN,   ## in five year age bands from 18 or over
+         Period = 2007, 
+         sex = SEX, ## 1= male 2=female
+         weight=NHSFINWT,
+         k10 = MNKESSLR,  ## total ranging from 10-50
+         alc = ifelse(ALCWKBC>=9995, 0, ALCWKBC)) %>% ## recode 9997 to 0
+  select(Study, Age, Period, sex, weight, k10, alc, WPM0101:WPM0160)
+
+nhs08 <- nhs08 %>%
+  mutate(agerec=as.factor(case_when(Age==5 ~ "20-24",
+                                    Age==6 ~ "25-29",
+                                    Age==7 ~ "30-34",
+                                    Age==8 ~ "35-39",
+                                    Age==9 ~ "40-44",
+                                    Age==10 ~ "45-49",
+                                    Age==11 ~ "50-54",
+                                    Age==12 ~ "55-59",
+                                    Age==13 ~ "60-64",
+                                    Age==14 ~ "65-69",
+                                    Age==15 ~ "70-74",
+                                    Age==16 ~ "75+",
+                                    Age==17 ~ "75+",
+                                    Age==18 ~ "75+")))
+
+table(nhs08$agerec)
+
+### australian national health survey 2012 ###
+nhs12 <- read_sas("nhs11bsp.sas7bdat")
+nhs12 <- nhs12 %>%
+  filter(AGEB>=6) %>%
+  mutate(Study = "NHS12",
+         Age = AGEB,   ## in five year age bands from 20 or over
+         Period = 2011, 
+         sex = SEX, ## 1= male 2=female
+         weight=NHSFINWT,
+         k10 = MNKESSLR, ## total ranging from 10-50
+         alc = ifelse(ALCWKLY>=9995, 0, ALCWKLY)) %>% ## recode 9995 to 0
+  select(Study, Age, Period, sex, weight, k10, alc, WPM0101:WPM0160)
+
+nhs12 <- nhs12 %>%
+  mutate(agerec=as.factor(case_when(Age==6 ~ "20-24",
+                                    Age==7 ~ "25-29",
+                                    Age==8 ~ "30-34",
+                                    Age==9 ~ "35-39",
+                                    Age==10 ~ "40-44",
+                                    Age==11 ~ "45-49",
+                                    Age==12 ~ "50-54",
+                                    Age==13 ~ "55-59",
+                                    Age==14 ~ "60-64",
+                                    Age==15 ~ "65-69",
+                                    Age==16 ~ "70-74",
+                                    Age==17 ~ "75+",
+                                    Age==18 ~ "75+",
+                                    Age==19 ~ "75+")))
+
+
+table(nhs12$agerec)
+
+###  national health survey 2014-15 ###
+nhs15 <- read_sas("nhs14spb.sas7bdat")
+nhs15 <- nhs15 %>%
+  filter(AGEB>=6) %>%
+  mutate(Study = "NHS15",
+         Age = AGEB,   ## in five year age bands from 20 or over
+         Period = 2014,
+         sex = SEX, ## 1= male 2=female
+         weight=NHSFINWT,
+         k10 = K10SCORE, ## total ranging from 10-50
+         alc = ifelse(ALCWKLY>=9995, 0, ALCWKLY)) %>% ## recode 9995 to 0
+  select(Study, Age, Period, sex, weight, k10, alc, WPM0101:WPM0160)
+
+nhs15 <- nhs15 %>%
+  mutate(agerec=as.factor(case_when(Age==6 ~ "20-24",
+                                    Age==7 ~ "25-29",
+                                    Age==8 ~ "30-34",
+                                    Age==9 ~ "35-39",
+                                    Age==10 ~ "40-44",
+                                    Age==11 ~ "45-49",
+                                    Age==12 ~ "50-54",
+                                    Age==13 ~ "55-59",
+                                    Age==14 ~ "60-64",
+                                    Age==15 ~ "65-69",
+                                    Age==16 ~ "70-74",
+                                    Age==17 ~ "75+",
+                                    Age==18 ~ "75+",
+                                    Age==19 ~ "75+")))
+
+table(nhs15$agerec)
+
+###  national health survey 2017-18 ###
+nhs18 <- read_sas("nhs17spb.sas7bdat")
+nhs18 <- nhs18 %>%
+  filter(AGEB>=6) %>%
+  mutate(Study = "NHS18",
+         Age = AGEB,   ## in five year age bands from 20 or over
+         Period = 2017,
+         sex = SEX, ## 1= male 2=female
+         weight=NHIFINWT,
+         k10 = K10SCORE, ## total ranging from 10-50
+         alc = ifelse(ALCWKLY>=9995, 0, ALCWKLY)) %>% ## recode 9995 to 0
+  select(Study, Age, Period, sex, weight, k10, alc, WPM0101:WPM0160)
+
+nhs18 <- nhs18 %>%
+  mutate(agerec=as.factor(case_when(Age==6 ~ "20-24",
+                                    Age==7 ~ "25-29",
+                                    Age==8 ~ "30-34",
+                                    Age==9 ~ "35-39",
+                                    Age==10 ~ "40-44",
+                                    Age==11 ~ "45-49",
+                                    Age==12 ~ "50-54",
+                                    Age==13 ~ "55-59",
+                                    Age==14 ~ "60-64",
+                                    Age==15 ~ "65-69",
+                                    Age==16 ~ "70-74",
+                                    Age==17 ~ "75+",
+                                    Age==18 ~ "75+",
+                                    Age==19 ~ "75+")))
+
+table(nhs18$agerec)
+
+nhs <- nhs01
+
+nhs<-bind_rows(nhs, nhs05)
+nhs<-bind_rows(nhs, nhs08)
+nhs<-bind_rows(nhs, nhs12)
+nhs<-bind_rows(nhs, nhs15)
+nhs<-bind_rows(nhs, nhs18)
+
+nhs <- nhs %>%
+  mutate(alcdis1=case_when(alc>=125 & k10>=20 ~ 1, ## co-morbid
+                           TRUE ~ 0),
+         alcdis2=case_when(alc>=125 & k10<20 ~ 1, ## high alc only
+                           TRUE ~ 0),
+         alcdis3=case_when(alc<125 & k10>=20 ~ 1, ## high dist only
+                           TRUE ~ 0),
+         alcdismult=case_when(alc>=125 & k10>=20 ~ 3,
+                              alc>=125 & k10<20 ~ 2,
+                              alc<125 & k10>=20 ~ 1,
+                              TRUE ~ 0),
+         k10cat=case_when(k10>=20 ~ 1, 
+                          k10<20 ~ 0,
+                          TRUE ~ NA))
+
+
+table(nhs$alcdis1)
+table(nhs$alcdis2)
+table(nhs$alcdis3)
+table(nhs$alcdismult)
+table(nhs$k10cat)
+
+
+#### APC-I analysis with no surveys weights accounted for #### 
+apci.plot.raw(data=nhs, outcome_var="alcdis1", age="agerec", period="Period")
+apci.plot.raw(data=nhs, outcome_var="alcdis2", age="agerec", period="Period")
+apci.plot.raw(data=nhs, outcome_var="alcdis3", age="agerec", period="Period")
+apci.plot.raw(data=nhs, outcome_var="k10", age="agerec", period="Period")
+
+no_cov1 <- apci(outcome = "alcdis1", age = "agerec", period = "Period", data = nhs, dev.test = FALSE, family = "binomial")
+no_cov2 <- apci(outcome = "alcdis2", age = "agerec", period = "Period", data = nhs, dev.test = FALSE, family = "binomial")
+no_cov3 <- apci(outcome = "alcdis3", age = "agerec", period = "Period", data = nhs, dev.test = FALSE, family = "binomial")
+no_cov4 <- apci(outcome = "k10", age = "agerec", period = "Period", data = nhs, dev.test = FALSE, family = "gaussian")
+
+summary(no_cov1)
+
+apci.plot.heatmap(model = no_cov1, age = "agerec",period = "Period",
+                  color_map = c('blue','yellow'))
+
+apci.bar(model = no_cov1, age = "agerec",period = "Period")
+
+apci.plot(data = nhs, outcome_var = "alcdis1", age = "agerec",model=no_cov1,
+          period = "Period", type = "model")
+
+
+no_cov1$cohort_average
+no_cov1$cohort_slope
+
+cov1 <- apci(outcome = "alcdis1", age = "agerec", period = "Period", covariate="sex", data = nhs, dev.test = FALSE, family = "binomial")
+apci.plot(data = nhs, outcome_var = "alcdis1", age = "agerec",model=cov1,
+          period = "Period", type = "model")
+
+#### APC-I analysis incorporating survey weights ####
+## creating 90 new replicate weights. 
+final_replicate_weights <- matrix(NA, nrow = nrow(nhs), ncol = 90)
+
+survey1_indices <- nhs$Study == "NHS01"
+final_replicate_weights[survey1_indices, 1:30] <- as.matrix(nhs[survey1_indices, grep("REPWGT", names(nhs))])  # First 30 replicate weights from survey1
+final_replicate_weights[survey1_indices, 31:90] <- nhs$weight[survey1_indices]  # Person weight from survey1 repeated for next 60 replicates
+
+survey2_indices <- nhs$Study != "NHS01"
+final_replicate_weights[survey2_indices, 1:30] <- nhs$weight[survey2_indices]  # Person weight from survey2 for the first 30 replicates
+final_replicate_weights[survey2_indices, 31:90] <- as.matrix(nhs[survey2_indices, grep("WPM", names(nhs))])  # Last 60 replicate weights from survey2
+
+final_nhs <- cbind(nhs, final_replicate_weights)
+
+final_nhs$acc <- as.factor(nhs$agerec)
+final_nhs$pcc <- as.factor(nhs$Period)
+final_nhs$k10cat <- as.factor(nhs$k10cat)
+
+wtdesign <- svrepdesign(data=final_nhs, weights=final_nhs$weight, repweights=final_replicate_weights, type="JK1")
+
+testmodel1<-svyglm(alcdis1 ~ acc + pcc + sex, wtdesign, family = quasibinomial(logit), contrasts = list(acc = "contr.sum", pcc = "contr.sum"))
+testmodel2<-svyglm(alcdis1 ~ acc*pcc + sex, wtdesign, family = quasibinomial(logit), contrasts = list(acc = "contr.sum", pcc = "contr.sum"))
+anova(testmodel1, testmodel2)
+
+temp_model <- svyglm(alcdis1 ~ acc*pcc + sex, wtdesign, family = quasibinomial(logit), contrasts = list(acc = "contr.sum", pcc = "contr.sum"))
+summary(temp_model)
+
+me <- maineffect(12,6,17, model=temp_model, gee=FALSE)
+cd <- cohortdeviation(12,6,17, model=temp_model, gee=FALSE)
+cd
+me
+
+mat<-cd$int_matrix
+
+temp_model2 <- svyglm(alcdis2 ~ acc*pcc + sex, wtdesign, family = quasibinomial(logit), contrasts = list(acc = "contr.sum", pcc = "contr.sum"))
+summary(temp_model2)
+
+maineffect(12,6,17, model=temp_model2, gee=FALSE)
+cohortdeviation(12,6,17, model=temp_model2, gee=FALSE)
+
+temp_model3 <- svyglm(alcdis3 ~ acc*pcc + sex, wtdesign, family = quasibinomial(logit), contrasts = list(acc = "contr.sum", pcc = "contr.sum"))
+summary(temp_model3)
+
+maineffect(12,6,17, model=temp_model3, gee=FALSE)
+cohortdeviation(12,6,17, model=temp_model3, gee=FALSE)
+
+
+
+
+########## APC gam analysis #############
+
+nhs <- nhs %>%
+  mutate(agerec2=as.numeric(case_when(agerec=="20-24" ~ 22.5,
+                                     agerec=="25-29" ~ 27.5,
+                                     agerec=="30-34" ~ 32.5,
+                                     agerec=="35-39" ~ 37.5,
+                                     agerec=="40-44" ~ 42.5,
+                                     agerec=="45-49" ~ 47.5,
+                                     agerec=="50-54" ~ 52.5,
+                                     agerec=="55-59" ~ 57.5,
+                                     agerec=="60-64" ~ 62.5,
+                                     agerec=="65-69" ~ 67.5,
+                                     agerec=="70-74" ~ 72.5,
+                                     agerec=="75+" ~ 77.5)))
+nhs2 <- nhs %>%
+  mutate(age=agerec2,
+         period=Period,
+         alcdis12=as.factor(alcdis1))
+
+plot_variable(dat=nhs2, y_var="alcdis12", apc_dimension="age")
+plot_variable(dat=nhs2, y_var="alcdis12", apc_dimension="period")
+
+plot_APCheatmap(dat = nhs2, y_var="alcdis1")
+
+model_cov  <- gam(alcdis1 ~ te(age, period, bs = "cr") +
+                    sex,
+                  data = nhs2, family=binomial(logit))
+
+plot_APCheatmap(dat   = nhs2,
+                model = model_cov,
+                dimensions=c("period","age"),
+                plot_CI=FALSE,
+                bin_heatmap = FALSE)
+plot_APChexamap(dat   = nhs2,
+                model = model_cov)
+
+plot_jointMarginalAPCeffects(model_list  = model_cov,
+                             dat         = nhs2)
+
+create_APCsummary(model_list = model_cov,
+                  dat        = nhs2)
+
+model_cov2  <- gam(alcdis2 ~ te(age, period, bs = "ps") +
+                    sex,
+                  data = nhs2, family=binomial(log))
+
+plot_APCheatmap(dat   = nhs2,
+                model = model_cov2,
+                dimensions=c("age","period"),
+                plot_CI=FALSE,
+                bin_heatmap = FALSE)
+plot_APChexamap(dat   = nhs2,
+                model = model_cov2)
+
+plot_jointMarginalAPCeffects(model_list  = model_cov2,
+                             dat         = nhs2,
+                             plot_CI=TRUE)
+
+
+create_APCsummary(model_list = model_cov2,
+                  dat        = nhs2)
+
+model_cov3  <- gam(alcdis3 ~ te(age, period, bs = "ps") +
+                     sex,
+                   data = nhs2, family=binomial(log))
+
+plot_APCheatmap(dat   = nhs2,
+                model = model_cov3)
+plot_APChexamap(dat   = nhs2,
+                model = model_cov3)
+
+model_list <- list("Alc-Dis" = model_cov,
+                   "Alc only" = model_cov2,
+                   "Dis only" = model_cov3)
+
+plot_jointMarginalAPCeffects(model_list  = model_list,
+                             dat         = nhs2,
+                             plot_CI=TRUE)
+
+
+create_APCsummary(model_list = model_cov3,
+                  dat        = nhs2)
+

@@ -1,7 +1,7 @@
 --- 
 title: "Matilda Statistics Resource Portal"
 author: "Matthew Sunderland & Tim Slade"
-date: "2025-01-13"
+date: "2025-01-21"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
