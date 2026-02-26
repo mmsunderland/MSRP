@@ -37,3 +37,7 @@ Chen, Q., Nian, H., Zhu, Y. et al. (2016) Too many covariates and too few cases?
 Johfre, S. S. and Freese, J. (2021) Reconsidering the reference category. Sociological methodology, 51: 253-269.
 
 - *This article covers an important topic in logistic regression, the choice of reference categories. This mostly reflects the choice of reference categories when using categorial explanatory (or independent), so not strictly applied to only logistic regression, but something that we do often.*
+
+https://bookdown.org/stephane_heritier/RM1TEST/
+
+- *This is an online textbook that summarises course material from the Biostatistics Collaboration of Australia. It provides details on regression analysis as a whole, including refresher material on the basics of regression analysis, linear regression, followed by logistic regression. Thie is a highly useful introduction to the topic!*
