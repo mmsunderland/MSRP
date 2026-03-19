@@ -46,4 +46,4 @@ https://bookdown.org/stephane_heritier/RM1TEST/
 
 https://www.lesahoffman.com/PSQF6270/index.html
 
-- *Course materials provided by Prof Lesa Hoffman on generalised linear models. This course covers models for categorical variables (binary, orinal and nominal) as well as other non-normal outcomes 
+- *Course materials provided by Prof Lesa Hoffman on generalised linear models. This course covers models for categorical variables (binary, orinal and nominal) as well as other non-normal outcomes* 
