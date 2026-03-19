@@ -4,3 +4,15 @@ Recent years have seen an explosion in the use of AI to assist with tasks that w
 
 This chapter focuses more on the use of coding with AI in an attempt to provide some estbalished guidelines, templates, and best practices for how someone might go about incorporating AI into their workflow. As always, this is a very fast moving field and so this chapter will be regularly updated. 
 
+## Journal Articles and Textbooks
+
+https://www.oreilly.com/library/view/ai-assisted-statistics-for/0642572242435/ 
+
+-*There are a number of O'Reilly books on the topic of AI-assisted statistics and data coding that are freely accessible by the University of Sydney Library. Other Examples are listed below:
+
+https://www.oreilly.com/library/view/ai-assisted-programming/9781098164553/
+https://www.oreilly.com/library/view/ai-assisted-python-for/9798341661622/
+https://www.oreilly.com/library/view/coding-with-ai/9781633437272/
+https://www.oreilly.com/library/view/coding-with-ai/9781394249138/
+
+- *Have fun!

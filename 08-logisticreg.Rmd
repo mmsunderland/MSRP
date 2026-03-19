@@ -38,6 +38,12 @@ Johfre, S. S. and Freese, J. (2021) Reconsidering the reference category. Sociol
 
 - *This article covers an important topic in logistic regression, the choice of reference categories. This mostly reflects the choice of reference categories when using categorial explanatory (or independent), so not strictly applied to only logistic regression, but something that we do often.*
 
+## Online courses and videos
+
 https://bookdown.org/stephane_heritier/RM1TEST/
 
 - *This is an online textbook that summarises course material from the Biostatistics Collaboration of Australia. It provides details on regression analysis as a whole, including refresher material on the basics of regression analysis, linear regression, followed by logistic regression. Thie is a highly useful introduction to the topic!*
+
+https://www.lesahoffman.com/PSQF6270/index.html
+
+- *Course materials provided by Prof Lesa Hoffman on generalised linear models. This course covers models for categorical variables (binary, orinal and nominal) as well as other non-normal outcomes 

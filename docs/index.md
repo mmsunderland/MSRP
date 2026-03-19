@@ -1,7 +1,7 @@
 --- 
 title: "Matilda Statistics Resource Portal"
-author: "Matthew Sunderland & Tim Slade"
-date: "2026-02-26"
+author: "Matilda Statistics and Coding Collective"
+date: "2026-03-20"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
@@ -21,7 +21,7 @@ csl: "chicago-fullnote-bibliography.csl"
 
 This book was written to provide easy access to the series of Matilda Centre Statistical resources. The chapters were assembled and annotated on a variety of topics tailored to the needs of researchers at the [Matilda Centre for Research in Mental Health and Substance Use](https://www.sydney.edu.au/matilda-centre/). 
 
-This book is a living and evolving document with regular additions made to each chapter as well as additional chapters based on further need. We encourage you to share this document widely and feel free to provide  suggestions for additional resources, new chapters, or edits by contacting either [Matthew Sunderland](mailto: matthew.sunderland@sydney.edu.au) or [Tim Slade](mailto: tim.slade@sydney.edu.au). 
+This book is a living and evolving document with regular additions made to each chapter as well as additional chapters based on further need. We encourage you to share this document widely and feel free to provide suggestions for additional resources, new chapters, or edits by contacting either [Matthew Sunderland](mailto: matthew.sunderland@sydney.edu.au) or [Tim Slade](mailto: tim.slade@sydney.edu.au). 
 
 ## Usage 
 
