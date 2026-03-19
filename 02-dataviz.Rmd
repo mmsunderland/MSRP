@@ -14,7 +14,7 @@ Wickham, H. (2016). Ggplot2: elegant graphics for data analysis (2nd Edition). S
 
 Winston, C. (2018). R graphics cookbook: practical recipes for visualising data (2nd Edition). O’Reilly Media. 
 
--	*Provide useful examples on how to visualise data and produce useful graphs. Primarily uses the ggplot2 package. Available online: <https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/2rsddf/cdi_askewsholts_vlebooks_9781491978573>* 
+-	*Provide useful examples on how to visualise data and produce useful graphs. Primarily uses the ggplot2 package. Available online: <https://sydney.primo.exlibrisgroup.com/permalink/61USYD_INST/2rsddf/cdi_askewsholts_vlebooks_9781491978573> or here https://r-graphics.org/* 
 
 Healy, K. (2019). Data visualization: A practical introduction. Princeton University Press. 
 
@@ -35,6 +35,14 @@ Slaughter, S. J., & Delwiche, L. D. (2010). Using PROC SGPLOT for quick high-qua
 Mitchell, M. N. (2012). A visual guide to stata graphics. Stata Press. 
 
 -	*Introductory textbook for graphing using STATA. Also has accompanying website <https://www.stata.com/support/faqs/graphics/gph/stata-graphs/>*
+
+Healy, K. (2026). Data Visualization: A practical introduction. Princeton University Press. 
+
+- *Forthcoming textbook that is current available free online https://socviz.co/ and provides a nice introduction to Data Viz using R. * 
+
+Wilke, C. O. (2019). Fundamental of data visualisation: A primer on making informative and compelling figures. O'Reilly Media. 
+
+- *Another free introductory textbook on the fundamentals of data visualistion with a strong focus on R. The book is avialable online here: https://clauswilke.com/dataviz/ *
 
 ## Websites
 
