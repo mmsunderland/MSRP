@@ -18,8 +18,6 @@ csl: "chicago-fullnote-bibliography.csl"
 # Welcome to the MSRP 
 
 >*A one-stop statistical shop for all your research needs*
->
->![](needfulthings.jpg){width=100%}
 
 This book was written to provide easy access to the series of Matilda Centre Statistical resources. The chapters were assembled and annotated on a variety of topics tailored to the needs of researchers at the [Matilda Centre for Research in Mental Health and Substance Use](https://www.sydney.edu.au/matilda-centre/). 
 

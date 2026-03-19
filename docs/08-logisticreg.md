@@ -38,6 +38,10 @@ Johfre, S. S. and Freese, J. (2021) Reconsidering the reference category. Sociol
 
 - *This article covers an important topic in logistic regression, the choice of reference categories. This mostly reflects the choice of reference categories when using categorial explanatory (or independent), so not strictly applied to only logistic regression, but something that we do often.*
 
+Roback, P. & Legler, J. (2021) Beyond Multiple Linear Regression: Applied Generalised Linear Models and Multilevel Models in R. CRC Press. 
+
+- *This is a free online textbook by the R team about a variety of generalised linear models including logistic regression. Available here: https://bookdown.org/roback/bookdown-BeyondMLR/ * 
+
 ## Online courses and videos
 
 https://bookdown.org/stephane_heritier/RM1TEST/
