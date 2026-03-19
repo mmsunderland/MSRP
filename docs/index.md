@@ -13,9 +13,9 @@ biblio-style: apalike
 csl: "chicago-fullnote-bibliography.csl"
 ---
 
-![](MSCC.png){width=100%}
-
 # Welcome to the MSRP 
+
+![](MSCC.png){width=100%}
 
 >*A one-stop statistical shop for all your research needs*
 
